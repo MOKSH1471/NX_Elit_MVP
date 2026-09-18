@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Phone, Mail, MapPin, MessageSquare, Send, CheckCircle2 } from "lucide-react";
 import { HOTEL_INFO, ROOM_CATEGORIES } from "@/lib/data";
 import { InView } from "@/components/core/in-view";
+import { SocialLinks } from "@/components/ui/SocialIcons";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -32,14 +33,14 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Section Header */}
         <InView className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="text-xs font-semibold uppercase tracking-widest text-zinc-400">
+          <span className="text-[11px] sm:text-xs font-mono font-medium tracking-[0.25em] uppercase text-amber-400/90 block">
             Direct Reservations & Concierge
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-white">
             Connect with Reception
           </h2>
-          <p className="text-sm sm:text-base text-zinc-300 font-light max-w-xl mx-auto">
-            Bypass third-party OTA commissions and reserve directly with our reception team for guaranteed best rates and personalized arrangements.
+          <p className="text-sm sm:text-base text-zinc-400 font-light max-w-md mx-auto">
+            Direct reservations with guaranteed best rates and personalized concierge assistance.
           </p>
         </InView>
 
@@ -51,8 +52,8 @@ export default function ContactSection() {
                 <h3 className="font-serif text-2xl font-bold text-white">
                   Front Desk & Reception
                 </h3>
-                <p className="text-xs text-zinc-300 mt-1 font-light">
-                  Our reservation desk operates 24/7 to assist with room bookings, banquet inquiries, and airport transfers.
+                <p className="text-xs text-zinc-400 mt-1 font-light">
+                  24/7 assistance for room reservations, private banquets, and airport transfers.
                 </p>
               </div>
 
@@ -104,6 +105,13 @@ export default function ContactSection() {
                   <MapPin className="w-4 h-4 text-white flex-shrink-0" />
                   <span className="text-zinc-300">{HOTEL_INFO.address}</span>
                 </p>
+              </div>
+
+              <div className="pt-4 border-t border-zinc-800 space-y-3">
+                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-amber-400/90 block">
+                  Connect & Social
+                </span>
+                <SocialLinks size="md" />
               </div>
             </div>
           </InView>

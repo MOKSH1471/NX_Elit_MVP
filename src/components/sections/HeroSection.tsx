@@ -1,33 +1,27 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ChevronDown } from "lucide-react";
-import { REAL_PHOTOS, HOTEL_INFO } from "@/lib/data";
-import { InView } from "@/components/core/in-view";
+import { REAL_PHOTOS } from "@/lib/data";
 import { ProgressiveBlur } from "@/components/core/progressive-blur";
-import { SplitText } from "@/components/reactbits/SplitText";
 
 interface HeroSectionProps {
-  onOpenEnquiry: (roomId?: string, type?: 'room' | 'banquet') => void;
+  onOpenEnquiry?: (roomId?: string, type?: 'room' | 'banquet') => void;
 }
 
 const HERO_SLIDES = [
-  {
-    image: REAL_PHOTOS.heroExterior,
-    subtitle: "28 Designer Rooms · Colour-Coded Floors · NX Kitchen Lounge",
-  },
-  {
-    image: REAL_PHOTOS.roomColorInterior1,
-    subtitle: "Interiors by Designer Vinoo Chadha · EM Bypass Corridor",
-  },
-  {
-    image: REAL_PHOTOS.nxKitchenLounge,
-    subtitle: "30-Seat Lounge with Cherry-Red Bar & 32-Cover Fine Dining",
-  },
+  { image: REAL_PHOTOS.heroExterior },
+  { image: REAL_PHOTOS.roomColorInterior1 },
+  { image: REAL_PHOTOS.nxKitchenLounge },
 ];
 
 export default function HeroSection({ onOpenEnquiry }: HeroSectionProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setLoaded(true), 120);
+    return () => clearTimeout(t);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -39,77 +33,84 @@ export default function HeroSection({ onOpenEnquiry }: HeroSectionProps) {
   return (
     <section
       id="hero"
-      className="relative h-screen min-h-screen flex flex-col justify-between pt-24 pb-8 overflow-hidden bg-[#09090b]"
+      className="relative h-screen min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#09090b]"
     >
-      {/* Hardware-Accelerated Visual Background */}
-      <div className="absolute inset-0 z-0 origin-center w-full h-full">
+      {/* Background Slideshow — brighter, cleaner view */}
+      <div className="absolute inset-0 z-0">
         {HERO_SLIDES.map((slide, index) => (
           <div
             key={slide.image}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
+            className={`absolute inset-0 w-full h-full transition-opacity duration-[1400ms] ease-in-out ${
               index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
             <ProgressiveBlur
               src={slide.image}
-              alt="NX Elit Luxury Boutique Hotel"
+              alt="NX Elit Boutique Hotel"
               fill
               priority={index === 0}
-              className="object-cover object-center brightness-[0.4] contrast-[1.05]"
+              className="object-cover object-center brightness-[0.62]"
               wrapperClassName="w-full h-full"
               sizes="100vw"
             />
           </div>
         ))}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-black/30 to-black/70" />
+        {/* Minimal vignette — bottom edge only */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#09090b]/75 via-transparent to-transparent" />
+        {/* Subtle top fade for navbar readability */}
+        <div className="absolute top-0 left-0 right-0 h-36 bg-gradient-to-b from-black/55 to-transparent" />
       </div>
 
-      {/* Spacer for Top Navbar Alignment */}
-      <div className="h-6" />
+      {/* Hero Content — centred, minimal */}
+      <div
+        className={`relative z-10 flex flex-col items-center text-center px-6 gap-7 transition-all duration-700 ${
+          loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+        }`}
+      >
+        {/* Eyebrow */}
+        <span className="text-[10px] sm:text-[11px] font-cinzel uppercase tracking-[0.32em] text-amber-300/80">
+          Boutique 4-Star · EM Bypass, Kolkata
+        </span>
 
-      {/* Purely Cinematic Hero Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-8 my-auto">
-        <InView>
-          <div className="space-y-4">
-            <h1 className="font-serif text-5xl sm:text-7xl lg:text-8xl font-bold tracking-[0.18em] text-[#f4f3ef] uppercase drop-shadow-lg">
-              <SplitText text="NX ELIT" delay={0.1} />
-            </h1>
-            <p className="text-base sm:text-xl font-light text-zinc-300 font-serif tracking-widest max-w-2xl mx-auto">
-              {HOTEL_INFO.tagline}
-            </p>
-          </div>
-        </InView>
-
-        <InView transition={{ delay: 0.15, duration: 0.5 }}>
-          <p className="text-xs sm:text-sm text-zinc-400 max-w-lg mx-auto tracking-widest uppercase font-light">
-            {HERO_SLIDES[currentSlide].subtitle}
-          </p>
-        </InView>
-
-        {/* Carousel Slide Indicators */}
-        <div className="flex items-center justify-center space-x-2 pt-2">
-          {HERO_SLIDES.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentSlide(i)}
-              className={`h-1.5 rounded-full transition-all duration-500 ${
-                i === currentSlide ? "w-8 bg-white" : "w-2 bg-zinc-700 hover:bg-zinc-500"
-              }`}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Minimal Scroll Cue at Screen Bottom */}
-      <div className="relative z-10 pb-2">
-        <a
-          href="#story"
-          className="flex flex-col items-center space-y-1 text-zinc-400 hover:text-white transition-colors text-[11px] uppercase tracking-widest font-light"
+        {/* Logo / Wordmark */}
+        <h1 className="font-serif font-bold tracking-[0.22em] text-white uppercase leading-none drop-shadow-2xl"
+          style={{ fontSize: "clamp(3.2rem, 9vw, 6.5rem)" }}
         >
-          <span>Explore Property</span>
-          <ChevronDown className="w-4 h-4 text-zinc-400" />
-        </a>
+          NX ELIT
+        </h1>
+
+        {/* One-line descriptor */}
+        <p className="text-sm sm:text-base font-light text-zinc-300/85 tracking-wide">
+          28 Designer Residences · Dark Elegance
+        </p>
+
       </div>
+
+      {/* Slide indicators — bottom centre */}
+      <div className="absolute bottom-10 left-0 right-0 z-10 flex items-center justify-center space-x-2">
+        {HERO_SLIDES.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentSlide(i)}
+            aria-label={`Slide ${i + 1}`}
+            className={`rounded-full transition-all duration-500 cursor-pointer ${
+              i === currentSlide
+                ? "w-7 h-[5px] bg-white"
+                : "w-[5px] h-[5px] bg-white/35 hover:bg-white/65"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Scroll hint — bottom right */}
+      <a
+        href="#story"
+        aria-label="Scroll to explore"
+        className="absolute bottom-10 right-8 z-10 hidden sm:flex flex-col items-center gap-2 text-[9px] font-cinzel uppercase tracking-[0.28em] text-zinc-400/65 hover:text-zinc-200 transition-colors"
+      >
+        <span>Scroll</span>
+        <span className="block w-px h-8 bg-zinc-500/60 mx-auto" />
+      </a>
     </section>
   );
 }

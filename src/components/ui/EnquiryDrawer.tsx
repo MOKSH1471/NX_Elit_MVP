@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { X, Calendar, User, Phone, Mail, CheckCircle2, Building } from "lucide-react";
 import { ROOM_CATEGORIES } from "@/lib/data";
 
@@ -28,6 +28,15 @@ export default function EnquiryDrawer({
     enquiryType: preselectedType,
     message: "",
   });
+
+  useEffect(() => {
+    if (preselectedRoomId) {
+      setFormData((prev) => ({ ...prev, roomCategory: preselectedRoomId }));
+    }
+    if (preselectedType) {
+      setFormData((prev) => ({ ...prev, enquiryType: preselectedType }));
+    }
+  }, [preselectedRoomId, preselectedType, isOpen]);
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);

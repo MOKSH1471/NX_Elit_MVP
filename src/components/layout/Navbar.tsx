@@ -6,6 +6,7 @@ import { Phone, MessageSquare, Menu, X } from "lucide-react";
 import { HOTEL_INFO } from "@/lib/data";
 import { AnimatedBackground } from "@/components/core/animated-background";
 import { ScrollProgress } from "@/components/core/scroll-progress";
+import { SocialLinks } from "@/components/ui/SocialIcons";
 
 interface NavbarProps {
   onOpenEnquiry: (roomId?: string, type?: 'room' | 'banquet') => void;
@@ -23,18 +24,19 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
         setScrolled(false);
       }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: "Story", href: "#story" },
-    { name: "Rooms", href: "#rooms" },
-    { name: "NX Kitchen", href: "#dining" },
-    { name: "Experience", href: "#experience" },
-    { name: "Reviews", href: "#reviews" },
-    { name: "Location", href: "#location" },
-    { name: "Contact", href: "#contact" },
+    { name: "Story", href: "/#story" },
+    { name: "Residences", href: "/rooms" },
+    { name: "NX Kitchen", href: "/#dining" },
+    { name: "Experience", href: "/#experience" },
+    { name: "Reviews", href: "/#reviews" },
+    { name: "Location", href: "/#location" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -77,14 +79,14 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
               enableHover
             >
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
                   data-id={link.name}
                   href={link.href}
                   className="inline-block px-3.5 py-1.5 text-xs uppercase tracking-widest text-zinc-300 hover:text-white font-medium transition-colors"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </AnimatedBackground>
           </nav>
@@ -138,14 +140,14 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
         <div className="fixed inset-0 z-30 bg-black/95 backdrop-blur-xl lg:hidden flex flex-col pt-24 px-6 pb-8 justify-between">
           <nav className="space-y-6">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className="block font-serif text-2xl font-light tracking-wide text-zinc-200 hover:text-white transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -177,6 +179,13 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
             >
               Check Direct Rates & Availability
             </button>
+
+            <div className="pt-4 flex flex-col items-center space-y-2.5">
+              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-amber-400/90">
+                Follow NX Elit
+              </span>
+              <SocialLinks size="sm" />
+            </div>
           </div>
         </div>
       )}

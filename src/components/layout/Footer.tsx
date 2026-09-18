@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { Phone, Mail, MapPin, MessageSquare, ArrowUpRight } from "lucide-react";
 import { HOTEL_INFO } from "@/lib/data";
+import { SocialLinks } from "@/components/ui/SocialIcons";
 
 interface FooterProps {
   onOpenEnquiry: (roomId?: string, type?: 'room' | 'banquet') => void;
@@ -35,6 +36,12 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
                 <span>Direct Reservations</span>
                 <ArrowUpRight className="w-4 h-4 text-white" />
               </button>
+            </div>
+            <div className="pt-4 space-y-2 border-t border-zinc-800/80">
+              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-amber-400/90 block">
+                Follow NX Elit
+              </span>
+              <SocialLinks size="sm" />
             </div>
           </div>
 

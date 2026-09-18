@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { Cormorant_Garamond, Plus_Jakarta_Sans, Cinzel, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const serifFont = Cormorant_Garamond({
@@ -10,6 +10,18 @@ const serifFont = Cormorant_Garamond({
 
 const sansFont = Plus_Jakarta_Sans({
   variable: "--font-sans",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const cinzelFont = Cinzel({
+  variable: "--font-cinzel",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const spaceFont = Space_Grotesk({
+  variable: "--font-space",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -38,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${serifFont.variable} ${sansFont.variable} scroll-smooth dark`}>
+    <html lang="en" className={`${serifFont.variable} ${sansFont.variable} ${cinzelFont.variable} ${spaceFont.variable} scroll-smooth dark`}>
       <body className="bg-[#09090b] text-[#f4f3ef] font-sans antialiased selection:bg-white selection:text-black">
         {children}
       </body>

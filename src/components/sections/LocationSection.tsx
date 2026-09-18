@@ -12,46 +12,46 @@ export default function LocationSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Section Header */}
         <InView className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="text-xs font-semibold uppercase tracking-widest text-zinc-400">
+          <span className="text-[11px] sm:text-xs font-mono font-medium tracking-[0.25em] uppercase text-amber-400/90 block">
             Prime Location & Proximity
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-white">
             EM Bypass Corridor, Kolkata
           </h2>
-          <p className="text-sm sm:text-base text-zinc-300 font-light max-w-xl mx-auto">
-            Situated on Kolkata's arterial Eastern Metropolitan Bypass connecting the airport to corporate IT hubs and cultural landmarks.
+          <p className="text-sm sm:text-base text-zinc-400 font-light max-w-md mx-auto">
+            Direct arterial connectivity between CCU Airport and Sector V IT hubs.
           </p>
         </InView>
 
         {/* Distance Cards Grid */}
         <AnimatedGroup className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-2xl bg-[#121216] border border-zinc-800 space-y-3 shadow-lg">
-            <div className="w-10 h-10 rounded-xl bg-[#181820] text-white flex items-center justify-center border border-zinc-700">
+          <div className="p-6 rounded-2xl bg-[#121216]/90 border border-zinc-800 space-y-3 shadow-lg hover:border-zinc-700 transition-colors">
+            <div className="w-10 h-10 rounded-xl bg-white/[0.04] text-[#d4af37] flex items-center justify-center border border-white/10">
               <Plane className="w-5 h-5" />
             </div>
-            <h3 className="font-serif text-lg font-semibold text-white">CCU International Airport</h3>
-            <p className="text-xs text-zinc-300 font-light">
-              {HOTEL_INFO.distanceAirport} — Direct expressway corridor commute.
+            <h3 className="font-sans text-base font-semibold text-white tracking-tight">CCU Airport</h3>
+            <p className="text-xs text-zinc-400 font-mono">
+              {HOTEL_INFO.distanceAirport} · 25-min expressway
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-[#121216] border border-zinc-800 space-y-3 shadow-lg">
-            <div className="w-10 h-10 rounded-xl bg-[#181820] text-white flex items-center justify-center border border-zinc-700">
+          <div className="p-6 rounded-2xl bg-[#121216]/90 border border-zinc-800 space-y-3 shadow-lg hover:border-zinc-700 transition-colors">
+            <div className="w-10 h-10 rounded-xl bg-white/[0.04] text-[#d4af37] flex items-center justify-center border border-white/10">
               <Building2 className="w-5 h-5" />
             </div>
-            <h3 className="font-serif text-lg font-semibold text-white">Salt Lake Sector V IT Hub</h3>
-            <p className="text-xs text-zinc-300 font-light">
-              {HOTEL_INFO.distanceITPark} — Fast 10-minute commute for corporate executives.
+            <h3 className="font-sans text-base font-semibold text-white tracking-tight">Sector V IT Hub</h3>
+            <p className="text-xs text-zinc-400 font-mono">
+              {HOTEL_INFO.distanceITPark} · 10-min commute
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-[#121216] border border-zinc-800 space-y-3 shadow-lg">
-            <div className="w-10 h-10 rounded-xl bg-[#181820] text-white flex items-center justify-center border border-zinc-700">
+          <div className="p-6 rounded-2xl bg-[#121216]/90 border border-zinc-800 space-y-3 shadow-lg hover:border-zinc-700 transition-colors">
+            <div className="w-10 h-10 rounded-xl bg-white/[0.04] text-[#d4af37] flex items-center justify-center border border-white/10">
               <Compass className="w-5 h-5" />
             </div>
-            <h3 className="font-serif text-lg font-semibold text-white">Science City & Cultural Center</h3>
-            <p className="text-xs text-zinc-300 font-light">
-              ~5 mins to Science City, 15 mins to Park Street and Victoria Memorial.
+            <h3 className="font-sans text-base font-semibold text-white tracking-tight">Science City</h3>
+            <p className="text-xs text-zinc-400 font-mono">
+              ~5 mins · 15 mins to Park Street
             </p>
           </div>
         </AnimatedGroup>

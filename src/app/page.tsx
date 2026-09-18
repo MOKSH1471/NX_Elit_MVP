@@ -1,11 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+import SplashScreen from "@/components/ui/SplashScreen";
 import Navbar from "@/components/layout/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import StorySection from "@/components/sections/StorySection";
-import ScrollVelocityTicker from "@/components/sections/ScrollVelocityTicker";
-import RoomsSection from "@/components/sections/RoomsSection";
 import PressMarquee from "@/components/sections/PressMarquee";
 import DiningSection from "@/components/sections/DiningSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
@@ -14,6 +13,7 @@ import LocationSection from "@/components/sections/LocationSection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/layout/Footer";
 import EnquiryDrawer from "@/components/ui/EnquiryDrawer";
+import FloatingBookingBar from "@/components/ui/FloatingBookingBar";
 
 export default function Home() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -27,21 +27,18 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#09090b] text-[#f4f3ef] selection:bg-white selection:text-black">
+    <main className="min-h-screen bg-[#09090b] text-[#f4f3ef] pb-28 selection:bg-white selection:text-black">
+      {/* Independent Auto-Zoom Splash Introduction Screen */}
+      <SplashScreen />
+
       {/* Sticky Header Navigation */}
       <Navbar onOpenEnquiry={handleOpenEnquiry} />
 
       {/* Hero Section */}
       <HeroSection onOpenEnquiry={handleOpenEnquiry} />
 
-      {/* Story & Colour Floor Strip Section with Background DriftWall Show */}
+      {/* Story & Colour Floor Identity Section */}
       <StorySection onOpenEnquiry={handleOpenEnquiry} />
-
-      {/* Scroll Velocity Ticker Strip */}
-      <ScrollVelocityTicker />
-
-      {/* Room Categories Section */}
-      <RoomsSection onOpenEnquiry={handleOpenEnquiry} />
 
       {/* Press & Amenities Marquee */}
       <PressMarquee />
@@ -63,6 +60,9 @@ export default function Home() {
 
       {/* Global Footer */}
       <Footer onOpenEnquiry={handleOpenEnquiry} />
+
+      {/* Floating Quick Reservation Bar (Appears on Scroll) */}
+      <FloatingBookingBar onOpenEnquiry={handleOpenEnquiry} />
 
       {/* Direct Booking & Event Enquiry Slide-Over Drawer */}
       <EnquiryDrawer
