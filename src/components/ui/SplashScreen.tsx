@@ -13,21 +13,38 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
   const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
+    // Check reduced motion
+    if (typeof window !== "undefined") {
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReduced) {
+        setIsDone(true);
+        onComplete?.();
+        return;
+      }
+    }
+
+    const hasSeenSplash = typeof window !== "undefined" && sessionStorage.getItem("nx_splash_seen");
+    const holdDuration = hasSeenSplash ? 200 : 800;
+    const totalDuration = hasSeenSplash ? 1100 : 2500;
+
     // Lock scroll during intro
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    // Step 1: Hold initial view for 850ms, then begin elegant camera push-in
+    // Step 1: Hold initial view, then begin camera push-in
     const zoomTimer = setTimeout(() => {
       setIsZooming(true);
-    }, 850);
+    }, holdDuration);
 
-    // Step 2: Complete and seamlessly remove splash screen after smooth glide
+    // Step 2: Complete and seamlessly remove splash screen, landing cleanly on scene 0
     const completeTimer = setTimeout(() => {
       setIsDone(true);
+      if (typeof window !== "undefined") {
+        sessionStorage.setItem("nx_splash_seen", "1");
+      }
       document.body.style.overflow = originalOverflow;
       onComplete?.();
-    }, 2650);
+    }, totalDuration);
 
     return () => {
       clearTimeout(zoomTimer);
@@ -38,6 +55,9 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
 
   const handleSkip = () => {
     setIsDone(true);
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("nx_splash_seen", "1");
+    }
     document.body.style.overflow = "";
     onComplete?.();
   };
@@ -48,25 +68,25 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
     <AnimatePresence>
       {!isDone && (
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           animate={{ opacity: isZooming ? 0 : 1 }}
           exit={{ opacity: 0 }}
           transition={{
             opacity: {
-              duration: isZooming ? 0.75 : 0.4,
-              delay: isZooming ? 1.05 : 0,
+              duration: 0.65,
+              delay: 0.65,
               ease: [0.4, 0, 0.2, 1],
             },
           }}
           className="fixed inset-0 z-50 bg-[#09090b] overflow-hidden flex items-center justify-center select-none cursor-pointer"
           onClick={handleSkip}
         >
-          {/* Layer 0: Landing page photo with subtle cinematic counter-scale for 3D depth */}
+          {/* Layer 0: Landing page photo matching Scene 0 with subtle counter-scale */}
           <motion.div
-            initial={{ scale: 1.08 }}
-            animate={{ scale: isZooming ? 1.0 : 1.08 }}
+            initial={{ scale: 1.05 }}
+            animate={{ scale: isZooming ? 1.0 : 1.05 }}
             transition={{
-              duration: 1.9,
+              duration: 1.6,
               ease: [0.65, 0, 0.08, 1],
             }}
             className="absolute inset-0 z-0 pointer-events-none origin-center"
@@ -74,18 +94,18 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
             <img
               src={REAL_PHOTOS.heroExterior}
               alt="NX Elit Boutique Hotel Kolkata"
-              className="w-full h-full object-cover brightness-[0.52] contrast-[1.08]"
+              className="w-full h-full object-cover brightness-[0.45] contrast-[1.05]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-black/15 to-black/55" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-black/20 to-black/60" />
           </motion.div>
 
-          {/* Layer 1: Auto-Zooming SVG Cutout Mask (Pure Cutout without border) */}
+          {/* Layer 1: Auto-Zooming SVG Cutout Mask landing directly on Scene 0 */}
           <motion.div
             initial={{ scale: 1 }}
-            animate={{ scale: isZooming ? 28 : 1 }}
+            animate={{ scale: isZooming ? 45 : 1 }}
             transition={{
-              duration: 1.8,
-              ease: [0.72, 0, 0.12, 1], // Luxury accelerating push curve
+              duration: 1.5,
+              ease: [0.72, 0, 0.12, 1],
             }}
             className="absolute inset-0 z-10 w-full h-full flex items-center justify-center origin-center will-change-transform pointer-events-none"
           >
@@ -106,9 +126,9 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
                     dominantBaseline="central"
                     fill="#000000"
                     style={{
-                      fontFamily: "var(--font-serif), 'Cormorant Garamond', Garamond, Georgia, serif",
+                      fontFamily: "var(--font-cinzel), 'Cinzel', serif",
                       fontWeight: 700,
-                      letterSpacing: "0.22em",
+                      letterSpacing: "0.24em",
                       textTransform: "uppercase",
                       fontSize: "clamp(42px, 10vw, 155px)",
                     }}
@@ -130,7 +150,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
             </svg>
           </motion.div>
 
-          {/* Layer 2: Intro Brand Header & Skip Button (fades gracefully when zoom begins) */}
+          {/* Layer 2: Intro Brand Header & Skip Button */}
           <motion.div
             initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: isZooming ? 0 : 1, y: isZooming ? -12 : 0 }}
@@ -147,7 +167,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
                 e.stopPropagation();
                 handleSkip();
               }}
-              className="pointer-events-auto text-[10px] uppercase tracking-[0.25em] text-zinc-400 hover:text-white px-5 py-2 rounded-full border border-zinc-800/80 hover:border-zinc-500 transition-all bg-black/60 backdrop-blur-md cursor-pointer shadow-lg"
+              className="pointer-events-auto text-[10px] uppercase tracking-[0.25em] text-zinc-400 hover:text-white px-5 py-2 rounded-full border border-zinc-800/80 hover:border-zinc-500 transition-all bg-black/60 cursor-pointer shadow-lg"
             >
               Skip Intro
             </button>

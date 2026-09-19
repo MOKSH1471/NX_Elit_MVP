@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Star, Quote, CheckCircle2, User, Award, ShieldCheck } from "lucide-react";
-import { InView } from "@/components/core/in-view";
 import DepthCarousel, { DepthCarouselItem } from "@/components/reactbits/DepthCarousel";
 
 export interface GuestReview extends DepthCarouselItem {
@@ -96,7 +95,7 @@ export default function ReviewsSection() {
     <section id="reviews" className="py-24 sm:py-32 bg-[#09090b] text-[#f4f3ef] relative border-t border-b border-zinc-800/80 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-16">
         {/* Section Header */}
-        <InView className="text-center max-w-3xl mx-auto space-y-4">
+        <div className="text-center max-w-3xl mx-auto space-y-4">
           <span className="text-[11px] sm:text-xs font-cinzel font-semibold tracking-[0.25em] uppercase text-amber-400/90 block">
             Verified Guest Accolades
           </span>
@@ -108,10 +107,10 @@ export default function ReviewsSection() {
           <p className="text-sm sm:text-base text-zinc-400 font-light max-w-md mx-auto">
             Verified feedback from corporate leaders and discerning travelers.
           </p>
-        </InView>
+        </div>
 
         {/* Minimal Metrics Bar */}
-        <InView transition={{ delay: 0.1, duration: 0.5 }}>
+        <div>
           <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 text-center py-4 border-y border-zinc-800/60 max-w-3xl mx-auto">
             <div className="space-y-0.5">
               <span className="font-space text-2xl font-bold text-white block tracking-tight">4.9 ★</span>
@@ -130,10 +129,10 @@ export default function ReviewsSection() {
               <span className="text-[10px] font-cinzel uppercase tracking-[0.16em] text-zinc-400 font-semibold">Host Service</span>
             </div>
           </div>
-        </InView>
+        </div>
 
         {/* 3D Depth Carousel Container */}
-        <InView transition={{ delay: 0.15, duration: 0.5 }}>
+        <div>
           <div className="w-full h-[520px] sm:h-[560px] relative">
             <DepthCarousel
               items={REVIEWS}
@@ -215,7 +214,7 @@ export default function ReviewsSection() {
               }}
             />
           </div>
-        </InView>
+        </div>
 
         {/* Footer Trust Bar */}
         <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 pt-4 text-xs font-space font-medium text-zinc-400">

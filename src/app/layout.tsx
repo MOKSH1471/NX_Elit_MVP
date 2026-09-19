@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans, Cinzel, Space_Grotesk } from "next/font/google";
+import { Cormorant_Garamond, Playfair_Display, Cinzel, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+
+const displayFont = Playfair_Display({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "900"],
+});
 
 const serifFont = Cormorant_Garamond({
   variable: "--font-serif",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-});
-
-const sansFont = Plus_Jakarta_Sans({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 const cinzelFont = Cinzel({
@@ -44,15 +45,21 @@ export const metadata: Metadata = {
   },
 };
 
+import { ScrollProvider } from "@/lib/scroll/ScrollProvider";
+import { PersistentShell } from "@/components/shell/PersistentShell";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${serifFont.variable} ${sansFont.variable} ${cinzelFont.variable} ${spaceFont.variable} scroll-smooth dark`}>
+    <html lang="en" className={`${displayFont.variable} ${serifFont.variable} ${cinzelFont.variable} ${spaceFont.variable} scroll-smooth dark`}>
       <body className="bg-[#09090b] text-[#f4f3ef] font-sans antialiased selection:bg-white selection:text-black">
-        {children}
+        <ScrollProvider>
+          <PersistentShell />
+          {children}
+        </ScrollProvider>
       </body>
     </html>
   );

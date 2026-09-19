@@ -1,14 +1,17 @@
-"use client";
+'use client';
 
-import React from "react";
-import { InfiniteScroll } from "@/components/reactbits/InfiniteScroll";
-import { Sparkles, Shield, Award, Utensils, Star, Compass } from "lucide-react";
+import React from 'react';
+import { InfiniteScroll } from '@/components/reactbits/InfiniteScroll';
+import { Sparkles, Shield, Award, Utensils, Star, Compass } from 'lucide-react';
+import { useScrollJourney } from '@/lib/scroll/ScrollProvider';
 
 export default function PressMarquee() {
+  const { velocity } = useScrollJourney();
+
   const marqueeItems = [
     <div key="m1" className="flex items-center space-x-3 text-xs text-zinc-300 font-light">
       <Star className="w-4 h-4 text-white" />
-      <span>"Designer Boutique Sanctuary on EM Bypass" — Hospitality Review</span>
+      <span>&ldquo;Designer Boutique Sanctuary on EM Bypass&rdquo; — Hospitality Review</span>
     </div>,
     <div key="m2" className="flex items-center space-x-3 text-xs text-zinc-300 font-light">
       <Sparkles className="w-4 h-4 text-white" />
@@ -32,5 +35,5 @@ export default function PressMarquee() {
     </div>,
   ];
 
-  return <InfiniteScroll items={marqueeItems} speed={30} />;
+  return <InfiniteScroll items={marqueeItems} velocity={velocity} baseSpeed={1} />;
 }

@@ -1,10 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import Navbar from "@/components/layout/Navbar";
+import React, { useState, useEffect } from "react";
 import Footer from "@/components/layout/Footer";
-import ContactSection from "@/components/sections/ContactSection";
-import LocationSection from "@/components/sections/LocationSection";
+import AddressSection from "@/components/sections/AddressSection";
 import EnquiryDrawer from "@/components/ui/EnquiryDrawer";
 
 export default function ContactPage() {
@@ -18,21 +16,18 @@ export default function ContactPage() {
     setDrawerOpen(true);
   };
 
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const customEvent = e as CustomEvent<{ roomId?: string; type?: 'room' | 'banquet' }>;
+      handleOpenEnquiry(customEvent.detail?.roomId, customEvent.detail?.type || 'room');
+    };
+    window.addEventListener('open-enquiry', handler);
+    return () => window.removeEventListener('open-enquiry', handler);
+  }, []);
+
   return (
     <main className="min-h-screen bg-[#09090b] text-[#f4f3ef] pt-16">
-      <Navbar onOpenEnquiry={handleOpenEnquiry} />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 text-center space-y-4">
-        <h1 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-white">
-          Contact & Location
-        </h1>
-        <p className="text-sm sm:text-base text-zinc-400 max-w-xl mx-auto font-light">
-          NX Elit Boutique Hotel, EM Bypass Corridor, Kolkata. Directly reach out for reservations, event bookings, and concierge assistance.
-        </p>
-      </div>
-
-      <ContactSection />
-      <LocationSection />
+      <AddressSection />
 
       <Footer onOpenEnquiry={handleOpenEnquiry} />
 

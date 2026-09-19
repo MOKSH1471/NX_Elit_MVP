@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft, RefreshCw, Home, BedDouble, PhoneCall, Compass, ShieldAlert } from "lucide-react";
-import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { HOTEL_INFO } from "@/lib/data";
 
@@ -98,9 +97,6 @@ export default function ErrorTemplate({
 
   return (
     <div className="min-h-screen bg-[#09090b] text-[#f4f3ef] flex flex-col justify-between relative overflow-hidden selection:bg-white selection:text-black">
-      {/* Optional Top Navigation */}
-      {showNavigation && <Navbar onOpenEnquiry={() => {}} />}
-
       {/* Atmospheric Background Elements */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[160px] pointer-events-none transition-all duration-1000"

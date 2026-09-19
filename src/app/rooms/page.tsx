@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import Navbar from "@/components/layout/Navbar";
+import React, { useState, useEffect } from "react";
 import Footer from "@/components/layout/Footer";
 import RoomsSection from "@/components/sections/RoomsSection";
 import EnquiryDrawer from "@/components/ui/EnquiryDrawer";
@@ -18,11 +17,17 @@ export default function RoomsPage() {
     setDrawerOpen(true);
   };
 
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const customEvent = e as CustomEvent<{ roomId?: string; type?: 'room' | 'banquet' }>;
+      handleOpenEnquiry(customEvent.detail?.roomId, customEvent.detail?.type || 'room');
+    };
+    window.addEventListener('open-enquiry', handler);
+    return () => window.removeEventListener('open-enquiry', handler);
+  }, []);
+
   return (
     <main className="min-h-screen bg-[#09090b] text-[#f4f3ef] pt-16 sm:pt-20 pb-24 selection:bg-white selection:text-black">
-      {/* Header Navigation */}
-      <Navbar onOpenEnquiry={handleOpenEnquiry} />
-
       {/* Main Residences & Suites Section */}
       <div>
         <RoomsSection onOpenEnquiry={handleOpenEnquiry} />

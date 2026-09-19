@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { EASE, DUR } from '@/lib/motion-tokens';
 import './DepthCarousel.css';
 
 export interface DepthCarouselItem {
@@ -69,7 +70,7 @@ export default function DepthCarousel({
   visibleCards = 4,
   falloff = 0.2,
   blur = 6,
-  duration = 700,
+  duration = DUR.seat * 1000,
   ease = 'power3.out',
   autoplay = false,
   autoplayDelay = 3200,
