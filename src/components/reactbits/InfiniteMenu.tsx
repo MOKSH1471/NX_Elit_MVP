@@ -989,7 +989,7 @@ const DEFAULT_MENU_ITEMS: MenuItem[] = [
   {
     image: 'https://images.unsplash.com/photo-1782977389500-dd7adad33ebe?q=80&w=600&h=600&fit=crop&sat=-100&auto=format',
     link: '#rooms',
-    title: 'NX Residence',
+    title: 'Elite Residence',
     description: 'Designer boutique luxury rooms'
   }
 ];

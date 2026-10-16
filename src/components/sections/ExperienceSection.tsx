@@ -21,7 +21,7 @@ export default function ExperienceSection({ onOpenEnquiry }: ExperienceSectionPr
             <div className="lg:col-span-6 relative h-[45vh] sm:h-[60vh] rounded-3xl overflow-hidden shadow-2xl border border-black/10">
               <Image
                 src={REAL_PHOTOS.banquetSpace}
-                alt="NX Elit 2,000 sq ft Banquet Hall"
+                alt="The Elite 2,000 sq ft Banquet Hall"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center"
@@ -38,10 +38,10 @@ export default function ExperienceSection({ onOpenEnquiry }: ExperienceSectionPr
                   Private Events & Conferences
                 </span>
                 <h3 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#09090b] tracking-tight leading-[1.08]">
-                  The NX Elit Banquet Space
+                  The Elite Banquet Space
                 </h3>
                 <p className="font-space text-sm sm:text-base text-zinc-700 font-light leading-relaxed">
-                  A sunlit, acoustically isolated 2,000 sq ft salon engineered for executive summits, private wedding banquets, and bespoke degustation catering curated exclusively by Corporate Chef Naresh Kumar.
+                  A sunlit, acoustically isolated 2,000 sq ft salon engineered for executive summits, private wedding banquets, and bespoke degustation catering curated exclusively by Executive Chef Raghavendra Sen.
                 </p>
               </div>
 
@@ -58,7 +58,7 @@ export default function ExperienceSection({ onOpenEnquiry }: ExperienceSectionPr
                 <div className="p-4 rounded-2xl bg-black/[0.04] border border-black/10 space-y-1">
                   <div className="flex items-center gap-2 font-semibold text-[#09090b]">
                     <Calendar className="w-4 h-4 text-amber-700" />
-                    <span>NX Kitchen Catering</span>
+                    <span>The Elite Catering</span>
                   </div>
                   <p className="text-zinc-600 text-[11px]">Custom degustation & buffet menus</p>
                 </div>

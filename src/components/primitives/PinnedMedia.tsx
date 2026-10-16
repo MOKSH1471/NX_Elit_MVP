@@ -15,7 +15,7 @@ interface PinnedMediaProps {
 
 export function PinnedMedia({
   images,
-  alt = 'NX Elit Hotel Media',
+  alt = 'The Elite Hotel Media',
   className = '',
   aspectClassName = 'h-[55vh] sm:h-[65vh] w-[85vw] max-w-4xl',
   children,

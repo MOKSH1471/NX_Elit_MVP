@@ -1,22 +1,22 @@
-# NX Elit — Website Architecture, Layout, Motion & Design System Specification
+# The Elite Hotel — Website Architecture, Layout, Motion & Design System Specification
 
 > **Target Audience**: AI Agents, LLMs, and Human Engineers.  
-> **Purpose**: This document is an exhaustive, self-contained technical specification of the **NX Elit** boutique hotel website. Any AI reading this file will understand the entire application architecture, routing, component hierarchy, design tokens, responsive layouts, state workflows, and motion/transition timings without needing to inspect individual source files.
+> **Purpose**: This document is an exhaustive, self-contained technical specification of **The Elite Hotel** boutique hotel website. Any AI reading this file will understand the entire application architecture, routing, component hierarchy, design tokens, responsive layouts, state workflows, and motion/transition timings without needing to inspect individual source files.
 
 ---
 
 ## 1. Executive Summary & Brand Identity
 
-- **Property**: **NX Elit** (4-Star Luxury Boutique Hotel)
+- **Property**: **The Elite Hotel** (4-Star Luxury Boutique Hotel)
 - **Location**: EM Bypass Corridor, Kolkata, West Bengal, India (near Science City, Salt Lake Sector V IT Hub, 12 km / ~25 mins to CCU Airport).
-- **Managing Director**: Raju Saha
-- **Interior Architect**: **Vinoo Chadha**
+- **Directorate**: The Directorate of Hospitality
+- **Interior Architect**: **Studio Arden Architecture**
 - **Brand Archetype**: Dark luxury, cinematic moody contrast, high-end hospitality, architectural materiality, quiet acoustic sanctuary.
 - **Core Concept — Signature Colour-Coded Floors**:
   - **Level 02**: *Cobalt & Sapphire Blue* (`#1d4ed8` / `#3b82f6`) — Oceanic calm, focus, workstation residences.
   - **Level 03 & 04**: *Forest Emerald Green* (`#059669` / `#10b981`) — Botanical rejuvenation, oak wood, brass detailing.
   - **Level 05**: *Crimson & Ruby Red* (`#e11d48` / `#f43f5e`) — Crown jewel suites, private skyline vistas, master residences.
-- **Gastronomy**: **NX Kitchen** (2,200 sq ft) overseen by Corporate Chef Naresh Kumar, featuring a 30-seat cherry-red bar lounge and a 32-cover ivory-and-gold restaurant.
+- **Gastronomy**: **The Elite Kitchen & Lounge** (2,200 sq ft) overseen by Executive Chef Raghavendra Sen, featuring a 30-seat cherry-red bar lounge and a 32-cover ivory-and-gold restaurant.
 - **Banqueting**: 2,000 sq ft versatile banquet hall for up to 150 guests.
 
 ---
@@ -103,7 +103,7 @@ Assembles the complete narrative in sequence:
 3. `<HeroSection />` — 100vh full-bleed photographic crossfade carousel with CTA
 4. `<StorySection />` — Architectural philosophy, live stat tickers & interactive floor switcher
 5. `<PressMarquee />` — Continuous marquee ticker with press accolades
-6. `<DiningSection />` — NX Kitchen spotlight with venue tabs (Lounge, Restaurant, Terrace)
+6. `<DiningSection />` — The Elite Dining spotlight with venue tabs (Lounge, Restaurant, Terrace)
 7. `<ExperienceSection />` — 6 core amenities + 2,000 sq ft banquet hall spotlight
 8. `<ReviewsSection />` — 3D depth carousel with verified guest testimonials
 9. `<LocationSection />` — Airport & Sector V transit cards + dark inverted Google Map
@@ -130,7 +130,7 @@ Every transition on this website is engineered for a dark, ultra-premium boutiqu
 - **Execution Mechanism**: Fullscreen overlay (`fixed inset-0 z-50 bg-[#09090b]`).
 - **Scroll Lock**: Sets `document.body.style.overflow = "hidden"` immediately upon mount; restores on completion.
 - **Timeline & Stages**:
-  1. **Hold Phase (0ms to 850ms)**: Displays centered wordmark cutout "NX ELIT" over property photography with a subtle pulsing gold badge.
+  1. **Hold Phase (0ms to 850ms)**: Displays centered wordmark cutout "THE ELITE" over property photography with a subtle pulsing gold badge.
   2. **Camera Push Phase (850ms to 2650ms)**:
      - SVG Cutout Mask (`#splash-auto-knockout-mask`): Scale transitions from `1` to `28` over **1.8 seconds** using cubic bezier `ease: [0.72, 0, 0.12, 1]`.
      - Background Image Counter-Scale: Transitions from `scale: 1.08` to `scale: 1.0` over **1.9 seconds** (`ease: [0.65, 0, 0.08, 1]`), producing realistic optical parallax depth.
@@ -147,7 +147,7 @@ Every transition on this website is engineered for a dark, ultra-premium boutiqu
   - Scrolled (`scrollY > 40px`): Morphs smoothly via `transition-all duration-500` into `.glass-nav` (`backdrop-blur-12px bg-[#09090b]/88 py-3 shadow-xl`).
 - **Spring-Loaded Floating Hover Pill (`AnimatedBackground.tsx`)**:
   - Uses Framer Motion's shared `layoutId="animated-bg-[id]"` pattern.
-  - As the user hovers across "Story", "Residences", "NX Kitchen", etc., the capsule pill background glides dynamically underneath the active link with spring physics:
+  - As the user hovers across "Story", "Residences", "The Elite Lounge", etc., the capsule pill background glides dynamically underneath the active link with spring physics:
     ```ts
     transition: { type: "spring", bounce: 0.2, duration: 0.3 }
     ```
@@ -175,7 +175,7 @@ Every transition on this website is engineered for a dark, ultra-premium boutiqu
     - Level 03/04: `rgba(6, 78, 59, 0.22)` (Emerald)
     - Level 05: `rgba(136, 19, 55, 0.22)` (Ruby)
 - **Floor Switcher Tabs**:
-  - Switching tabs smoothly swaps the 12-column showcase layout: photography, materials list, room count, and designer quotes by Vinoo Chadha.
+  - Switching tabs smoothly swaps the 12-column showcase layout: photography, materials list, room count, and designer quotes by Studio Arden.
   - Active tab scales to `scale-105` with `bg-white text-black`.
 - **Numerical Spring Counters (`Counter.tsx`)**:
   - Triggered on scroll into view (`stiffness: 90, damping: 25, duration: 1.5s`).
@@ -186,7 +186,7 @@ Every transition on this website is engineered for a dark, ultra-premium boutiqu
   - Runs infinitely with horizontal translation (`translateX`) at a constant smooth speed of 30.
   - Content repeats seamlessly with no jump or stutter.
 
-### 5.6 NX Kitchen Gastronomy Venue Switcher (`DiningSection.tsx`)
+### 5.6 The Elite Dining Gastronomy Venue Switcher (`DiningSection.tsx`)
 - **Interactive Venue Tabs**:
   - 3 Venues: `lounge` (Cherry-Red Bar, 30 seats), `restaurant` (Ivory & Gold, 32 covers), `terrace` (Terrace Tandoor & Bakery).
   - Background radial ambient glow transitions dynamically (`duration-1000`) between:
@@ -273,16 +273,16 @@ Every transition on this website is engineered for a dark, ultra-premium boutiqu
 ### 6.1 `HOTEL_INFO`
 ```ts
 {
-  name: "NX Elit",
-  tagline: "A Boutique Address on EM Bypass, Kolkata",
+  name: "The Elite Hotel",
+  tagline: "A Boutique Luxury Address on EM Bypass, Kolkata",
   address: "EM Bypass Corridor, Near Science City & Salt Lake Sector V, Kolkata, West Bengal 700105",
   phone: "+91 98300 00000",
   whatsapp: "+91 98300 00000",
-  email: "reservations@nxelithotel.com",
+  email: "reservations@elitehotels.com",
   checkIn: "14:00 hrs",
   checkOut: "12:00 hrs",
-  managingDirector: "Raju Saha",
-  interiorDesigner: "Vinoo Chadha",
+  managingDirector: "The Directorate of Hospitality",
+  interiorDesigner: "Studio Arden Architecture",
   totalRooms: 28,
   totalFloors: 5,
   starRating: "4-Star Boutique",
@@ -297,17 +297,17 @@ Every transition on this website is engineered for a dark, ultra-premium boutiqu
 3. **`super-deluxe`**: 380 sq ft · Super King · ₹7,200/night · Levels 4 & 5
 4. **`elit-suite`**: 550 sq ft · Master Suite Bed · ₹10,500/night · Level 5 Flagship
 
-### 6.3 Real Property Photography Map (`REAL_PHOTOS`)
-All images are verified live photography of the real property:
-- `heroExterior`: Skyline facade
-- `roomColorInterior1`: Level 02 Blue interior
-- `roomInteriorDetail2`: Level 03/04 Green interior
-- `roomInteriorDetail3`: Level 05 Suite bedroom
-- `nxKitchenLounge`: Cherry-red bar lounge
-- `nxKitchenRestaurant`: Ivory & gold dining
-- `nxKitchenBacksplash`: Dining backsplash & wine nook
-- `banquetSpace`: 2,000 sq ft banquet venue
-- `propertyInterior`: Lobby & suite salon
+### 6.3 Curated Luxury Boutique Photography Map (`REAL_PHOTOS`)
+All images are curated royalty-free, high-resolution dark boutique hotel photography:
+- `heroExterior`: Illuminated architectural hotel facade at dusk
+- `roomColorInterior1`: Level 02 Blue velvet designer bedroom
+- `roomInteriorDetail2`: Level 03/04 Emerald green & oak acoustic suite
+- `roomInteriorDetail3`: Level 05 Ruby red & dark walnut penthouse suite
+- `eliteKitchenLounge`: Cherry-red & amber ambient cocktail lounge
+- `eliteKitchenRestaurant`: Ivory & gold modern fine dining salon
+- `eliteKitchenBacksplash`: Intimate wine cellar & bar detail
+- `banquetSpace`: 2,000 sq ft grand event & banquet salon
+- `propertyInterior`: Double-height marble lobby sanctuary
 
 ---
 

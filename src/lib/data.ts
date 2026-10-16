@@ -36,16 +36,16 @@ export interface GalleryItem {
 }
 
 export const HOTEL_INFO = {
-  name: "NX Elit",
-  tagline: "A Boutique Address on EM Bypass, Kolkata",
+  name: "The Elite Hotel",
+  tagline: "A Boutique Luxury Address on EM Bypass, Kolkata",
   address: "EM Bypass Corridor, Near Science City & Salt Lake Sector V, Kolkata, West Bengal 700105",
   phone: "+91 98300 00000",
   whatsapp: "+91 98300 00000",
-  email: "reservations@nxelithotel.com",
+  email: "reservations@elitehotels.com",
   checkIn: "14:00 hrs",
   checkOut: "12:00 hrs",
-  managingDirector: "Raju Saha",
-  interiorDesigner: "Vinoo Chadha",
+  managingDirector: "The Directorate of Hospitality",
+  interiorDesigner: "Studio Arden Architecture",
   totalRooms: 28,
   totalFloors: 5,
   starRating: "4-Star Boutique",
@@ -54,15 +54,15 @@ export const HOTEL_INFO = {
 };
 
 export const REAL_PHOTOS = {
-  heroExterior: "https://images.t2online.in/cdn-cgi/image/width=1280,height=720,fit=cover,gravity=face,quality=70,format=auto/https://apis.t2online.in/getImageStream/7514/1783774819201.jpeg",
-  roomColorInterior1: "https://images.t2online.in/cdn-cgi/image/width=1200,quality=70/https://cms.t2online.in/api/images/1783774869338.jpg",
-  roomInteriorDetail2: "https://images.t2online.in/cdn-cgi/image/width=1200,quality=70/https://cms.t2online.in/api/images/1783774894830.jpg",
-  roomInteriorDetail3: "https://images.t2online.in/cdn-cgi/image/width=1200,quality=70/https://cms.t2online.in/api/images/1783774924235.jpg",
-  nxKitchenLounge: "https://images.t2online.in/cdn-cgi/image/width=1200,quality=70/https://cms.t2online.in/api/images/1783774948242.jpg",
-  nxKitchenRestaurant: "https://images.t2online.in/cdn-cgi/image/width=1200,quality=70/https://cms.t2online.in/api/images/1783774962930.jpg",
-  nxKitchenBacksplash: "https://images.t2online.in/cdn-cgi/image/width=1200,quality=70/https://cms.t2online.in/api/images/1783774973226.jpg",
-  banquetSpace: "https://images.t2online.in/cdn-cgi/image/width=1200,quality=70/https://cms.t2online.in/api/images/1783774989121.jpg",
-  propertyInterior: "https://images.t2online.in/cdn-cgi/image/width=1200,quality=70/https://cms.t2online.in/api/images/1783775033228.jpg",
+  heroExterior: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1600&auto=format&fit=crop",
+  roomColorInterior1: "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop",
+  roomInteriorDetail2: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1200&auto=format&fit=crop",
+  roomInteriorDetail3: "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?q=80&w=1200&auto=format&fit=crop",
+  eliteKitchenLounge: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1200&auto=format&fit=crop",
+  eliteKitchenRestaurant: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop",
+  eliteKitchenBacksplash: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=1200&auto=format&fit=crop",
+  banquetSpace: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
+  propertyInterior: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop",
 };
 
 export const FLOORS_DATA: FloorInfo[] = [
@@ -85,7 +85,7 @@ export const FLOORS_DATA: FloorInfo[] = [
     hex: "#059669",
     borderClass: "border-emerald-500/50",
     bgGlowClass: "from-emerald-900/30 via-zinc-900 to-black",
-    description: "Bathed in lush botanical greens, warm oak wood finishes, and serene earthy textures curated by Vinoo Chadha.",
+    description: "Bathed in lush botanical greens, warm oak wood finishes, and serene earthy textures curated by Studio Arden.",
     roomsCount: 14,
     featuredImage: REAL_PHOTOS.roomInteriorDetail2,
     highlights: ["Earthy Wood & Brass Detailing", "Forest Velvet Headboards", "Panoramic EM Bypass Corridor Views"]
@@ -97,7 +97,7 @@ export const FLOORS_DATA: FloorInfo[] = [
     hex: "#e11d48",
     borderClass: "border-rose-500/50",
     bgGlowClass: "from-rose-900/30 via-stone-900 to-black",
-    description: "The crown jewel of NX Elit. Rich crimson tones, plush leather furniture, and executive suite indulgence.",
+    description: "The crown jewel of The Elite Hotel. Rich crimson tones, plush leather furniture, and executive suite indulgence.",
     roomsCount: 6,
     featuredImage: REAL_PHOTOS.roomInteriorDetail3,
     highlights: ["Royal Crimson Accents", "Exclusive Master Suite Layout", "Luxury Rain Shower Enclosure"]
@@ -152,7 +152,7 @@ export const ROOM_CATEGORIES: RoomCategory[] = [
   },
   {
     id: "elit-suite",
-    name: "The NX Elit Suite",
+    name: "The Elite Suite",
     tagline: "The flagship sanctuary of design, space, and privacy",
     description: "An extraordinary master residence featuring a separate living salon, designer dining nook, 5th floor ruby red theme, and bespoke concierge treatment.",
     sqft: "550 sq ft",
@@ -168,7 +168,7 @@ export const ROOM_CATEGORIES: RoomCategory[] = [
 ];
 
 export const DINING_HIGHLIGHTS = {
-  name: "NX Kitchen",
+  name: "The Elite Kitchen & Lounge",
   subtitle: "A Culinary Sanctuary on EM Bypass",
   lounge: {
     title: "30-Seat Cocktail & Wine Lounge",
@@ -178,7 +178,7 @@ export const DINING_HIGHLIGHTS = {
   restaurant: {
     title: "32-Cover Fine Dining Room",
     aesthetic: "Ivory and gold sophistication with purple & blue accents",
-    description: "Overseen by Corporate Chef Naresh Kumar, serving an expressive fusion of global classics, modern Indian gastronomy, and regional Bengali delicacies."
+    description: "Overseen by Executive Chef Raghavendra Sen, serving an expressive fusion of global classics, modern Indian gastronomy, and regional Bengali delicacies."
   },
   upcoming: [
     "Terrace Tandoor & Grill Lounge (Skyline dining experience coming soon)",
@@ -188,7 +188,7 @@ export const DINING_HIGHLIGHTS = {
 
 export const AMENITIES = [
   { icon: "Clock", title: "24-Hour Desk & Security", desc: "Attentive front desk host available day and night" },
-  { icon: "Utensils", title: "In-Room Dining", desc: "Curated 24/7 menu from NX Kitchen" },
+  { icon: "Utensils", title: "In-Room Dining", desc: "Curated 24/7 menu from The Elite Kitchen" },
   { icon: "Wifi", title: "Gigabit High-Speed Wi-Fi", desc: "Seamless connectivity across all rooms & lounges" },
   { icon: "Car", title: "Valet & Private Parking", desc: "Secure on-site parking on EM Bypass corridor" },
   { icon: "Shirt", title: "Same-Day Express Laundry", desc: "Professional dry cleaning and pressing" },
@@ -196,13 +196,13 @@ export const AMENITIES = [
 ];
 
 export const GALLERY_ITEMS: GalleryItem[] = [
-  { id: "g1", title: "NX Elit Exterior Skyline", category: "property", imageUrl: REAL_PHOTOS.heroExterior, caption: "Boutique 4-star facade on EM Bypass" },
-  { id: "g2", title: "Color-Coded Deluxe Room", category: "rooms", imageUrl: REAL_PHOTOS.roomColorInterior1, caption: "Designer interiors by Vinoo Chadha" },
+  { id: "g1", title: "The Elite Exterior Skyline", category: "property", imageUrl: REAL_PHOTOS.heroExterior, caption: "Boutique 4-star facade on EM Bypass" },
+  { id: "g2", title: "Color-Coded Deluxe Room", category: "rooms", imageUrl: REAL_PHOTOS.roomColorInterior1, caption: "Designer interiors by Studio Arden" },
   { id: "g3", title: "Emerald Green Floor Room", category: "rooms", imageUrl: REAL_PHOTOS.roomInteriorDetail2, caption: "Custom brass fittings and mood lighting" },
   { id: "g4", title: "Ruby Red Suite Bedroom", category: "rooms", imageUrl: REAL_PHOTOS.roomInteriorDetail3, caption: "5th floor luxury suite sanctuary" },
-  { id: "g5", title: "NX Kitchen Cherry-Red Bar", category: "dining", imageUrl: REAL_PHOTOS.nxKitchenLounge, caption: "30-seat lounge with cherry-red bar counter" },
-  { id: "g6", title: "NX Kitchen Restaurant", category: "dining", imageUrl: REAL_PHOTOS.nxKitchenRestaurant, caption: "32-cover dining in ivory and gold" },
-  { id: "g7", title: "NX Kitchen Backsplash", category: "dining", imageUrl: REAL_PHOTOS.nxKitchenBacksplash, caption: "Intimate wine & lounge nook" },
+  { id: "g5", title: "The Elite Cherry-Red Bar", category: "dining", imageUrl: REAL_PHOTOS.eliteKitchenLounge, caption: "30-seat lounge with cherry-red bar counter" },
+  { id: "g6", title: "The Elite Fine Dining Restaurant", category: "dining", imageUrl: REAL_PHOTOS.eliteKitchenRestaurant, caption: "32-cover dining in ivory and gold" },
+  { id: "g7", title: "The Elite Wine & Lounge Nook", category: "dining", imageUrl: REAL_PHOTOS.eliteKitchenBacksplash, caption: "Intimate wine & lounge nook" },
   { id: "g8", title: "2,000 sq ft Banquet Space", category: "banquet", imageUrl: REAL_PHOTOS.banquetSpace, caption: "Versatile venue for corporate offsites & social events" },
   { id: "g9", title: "Lobby & Interior Sanctuary", category: "property", imageUrl: REAL_PHOTOS.propertyInterior, caption: "Curated boutique hospitality experience" }
 ];

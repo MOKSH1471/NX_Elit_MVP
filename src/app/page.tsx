@@ -44,7 +44,7 @@ export default function Home() {
       {/* Story & Colour Floor Identity Section (Ends on 4th Picture / Level 05 Crown) */}
       <StorySection onOpenEnquiry={handleOpenEnquiry} />
 
-      {/* NX Kitchen Dining Showcase (Red Lounge arc sweeps in immediately after 4th picture) */}
+      {/* The Elite Dining Showcase (Red Lounge arc sweeps in immediately after 4th picture) */}
       <DiningSection onOpenEnquiry={handleOpenEnquiry} />
 
       {/* Press & Amenities Marquee */}

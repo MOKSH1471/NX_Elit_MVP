@@ -28,18 +28,18 @@ const spaceFont = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "NX Elit | Boutique 4-Star Hotel on EM Bypass, Kolkata",
-  description: "Experience NX Elit, Kolkata's premier dark boutique hotel featuring 28 designer rooms across colour-coded floors, NX Kitchen lounge & restaurant, and 2,000 sq ft banquet space.",
-  keywords: ["NX Elit Hotel", "EM Bypass Hotel Kolkata", "Boutique Hotel Kolkata", "Luxury Hotel Kolkata", "NX Kitchen", "Vinoo Chadha Interiors"],
+  title: "The Elite Hotel | Boutique 4-Star Luxury on EM Bypass, Kolkata",
+  description: "Experience The Elite Hotel, Kolkata's premier dark boutique sanctuary featuring 28 designer residences across colour-coded floors, The Elite Lounge & restaurant, and 2,000 sq ft banquet space.",
+  keywords: ["The Elite Hotel", "Elite Hotels", "EM Bypass Hotel Kolkata", "Boutique Hotel Kolkata", "Luxury Hotel Kolkata", "The Elite Lounge", "Studio Arden Interiors"],
   openGraph: {
-    title: "NX Elit | Boutique Luxury Hotel on EM Bypass",
-    description: "A dark, motion-led boutique hotel experience designed by Vinoo Chadha.",
+    title: "The Elite Hotel | Boutique Luxury on EM Bypass",
+    description: "A dark, motion-led boutique hotel experience designed by Studio Arden.",
     images: [
       {
-        url: "https://images.t2online.in/cdn-cgi/image/width=1280,height=720,fit=cover,gravity=face,quality=70,format=auto/https://apis.t2online.in/getImageStream/7514/1783774819201.jpeg",
-        width: 1280,
-        height: 720,
-        alt: "NX Elit Exterior Skyline",
+        url: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop",
+        width: 1200,
+        height: 675,
+        alt: "The Elite Exterior Skyline",
       },
     ],
   },

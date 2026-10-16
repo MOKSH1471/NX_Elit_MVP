@@ -1,17 +1,17 @@
-# PRD — NX Elit Hotel Website (MVP)
-**A dark, premium, parallax-scroll marketing site for NX Elit, Kolkata**
+# PRD — The Elite Hotel Website (MVP)
+**A dark, premium, parallax-scroll marketing site for The Elite Hotel, Kolkata**
 
-Version 1.0 · Draft for review
+Version 1.1 · Updated branding
 
 ---
 
 ## 1. Background & Why This Project Exists
 
-NX Elit is a newly opened boutique 4-star hotel on Kolkata's Eastern Metropolitan (EM) Bypass — 28 rooms across Executive Deluxe, Deluxe, Super Deluxe and a Suite category, interiors by designer Vinoo Chadha, a signature "colour-coded floor" identity (blue floor, green floors, red floor), an in-house restaurant (Kitchen 165) with a strong F&B focus, and a ~2,000 sq ft banquet space coming online for events. It currently exists online mainly as a listing on OTAs (MakeMyTrip, Booking.com, Agoda, Trip.com) — there is no direct brand website.
+The Elite Hotel is a boutique 4-star luxury hotel on Kolkata's Eastern Metropolitan (EM) Bypass — 28 rooms across Executive Deluxe, Deluxe, Super Deluxe and a Suite category, interiors by Studio Arden, a signature "colour-coded floor" identity (blue floor, green floors, red floor), an in-house restaurant & lounge with a strong F&B focus, and a ~2,000 sq ft banquet space for events.
 
-**The gap:** OTA listings sell the hotel as a commodity — a photo grid, a price, and a star rating next to five competitors. They cannot communicate what actually differentiates NX Elit (the boutique design concept, the colour-floor identity, the F&B focus) or build a direct, commission-free booking/enquiry channel.
+**The gap:** OTA listings sell the hotel as a commodity — a photo grid, a price, and a star rating next to five competitors. They cannot communicate what actually differentiates The Elite Hotel (the boutique design concept, the colour-floor identity, the F&B focus) or build a direct, commission-free booking/enquiry channel.
 
-**The opportunity:** A dark, cinematic, motion-led brand website that sells the *feeling* of staying at NX Elit — positioned closer to a boutique hospitality brand than a generic bypass hotel — while still doing the practical job of getting a guest to check dates, see rooms, and enquire or book.
+**The opportunity:** A dark, cinematic, motion-led brand website that sells the *feeling* of staying at The Elite Hotel — positioned closer to a boutique hospitality brand than a generic bypass hotel — while still doing the practical job of getting a guest to check dates, see rooms, and enquire or book.
 
 ---
 
@@ -89,7 +89,7 @@ Given this is a small 28-room boutique property, the strongest pattern (and the 
 - Reference pattern: this is the section that should look closest to the `dark.design` inspiration set (large type, minimal chrome, confident negative space, one hero visual, no clutter).
 
 ### 6.2 Story (`#story`)
-- "Not just another business hotel" narrative — 2–3 short paragraphs on the boutique concept and Vinoo Chadha-designed interiors.
+- "Not just another business hotel" narrative — 2–3 short paragraphs on the boutique concept and Studio Arden-designed interiors.
 - **Signature interactive element: the Colour Floor strip.** A horizontal (desktop) / vertical (mobile) scroll-driven strip representing the 5 guest floors, each tinted with its real palette (2nd floor = blue, 3rd/4th = green, 5th = red). As the user scrolls through this section, the background ambient colour of the strip shifts floor-to-floor (GSAP ScrollTrigger scrubbed colour interpolation). This is the one "wow" interaction worth investing real effort in for MVP — it's the hotel's actual, real differentiator, not an invented gimmick.
 - Small stat row (rooms count, floors, opened year) using **Unlumen UI `Count Up`** for a subtle number-animate-in.
 
@@ -182,23 +182,23 @@ This project doesn't need the full auth/JWT/MongoDB backend stack from your gene
 
 ---
 
-## 9.5 Real NX Elit Reference Photography (for Antigravity / dev use)
+## 9.5 Royalty-Free Dark Boutique Hotel Photography
 
-NX Elit has **no live website of its own** — it currently exists only via OTA listings (which don't expose property-specific imagery cleanly) and one press feature. The images below are **real, verified photos of the actual property**, sourced from a t2ONLINE feature published shortly after opening. Use these as genuine placeholder/reference imagery when scaffolding sections in Antigravity — swap for the hotel's own high-res originals before launch, as these are web-compressed press sizes, not launch-ready assets, and are the publication's property until proper licensing/sourcing is sorted with NX Elit directly.
+The website utilizes curated, royalty-free high-resolution photography capturing modern dark boutique aesthetics:
 
 | Section | Image URL | What it shows |
 |---|---|---|
-| Hero | `https://images.t2online.in/cdn-cgi/image/width=1280,height=720,fit=cover,gravity=face,quality=70,format=auto/https://apis.t2online.in/getImageStream/7514/1783774819201.jpeg` | Signature exterior/hero shot of NX Elit |
-| Story / Rooms | `https://images.t2online.in/cdn-cgi/image/width=1200,quality=70/https://cms.t2online.in/api/images/1783774869338.jpg` | Guest room — colour-floor interior design |
-| Story / Rooms | `https://images.t2online.in/cdn-cgi/image/width=1200,quality=70/https://cms.t2online.in/api/images/1783774894830.jpg` | Guest room / interior detail |
-| Story / Rooms | `https://images.t2online.in/cdn-cgi/image/width=1200,quality=70/https://cms.t2online.in/api/images/1783774924235.jpg` | Guest room / interior detail |
-| Dining (NX Kitchen) | `https://images.t2online.in/cdn-cgi/image/width=1200,quality=70/https://cms.t2online.in/api/images/1783774948242.jpg` | NX Kitchen — 30-seat lounge, black-and-gold aesthetic with cherry-red bar |
-| Dining (NX Kitchen) | `https://images.t2online.in/cdn-cgi/image/width=1200,quality=70/https://cms.t2online.in/api/images/1783774962930.jpg` | NX Kitchen restaurant — ivory and gold interior, 32-cover dining room |
-| Dining (NX Kitchen) | `https://images.t2online.in/cdn-cgi/image/width=1200,quality=70/https://cms.t2online.in/api/images/1783774973226.jpg` | NX Kitchen — wine/purple/blue backsplash detail, window views |
-| Experience / Banquet | `https://images.t2online.in/cdn-cgi/image/width=1200,quality=70/https://cms.t2online.in/api/images/1783774989121.jpg` | Banquet space (2,000 sq ft, ground floor) |
-| Story / About | `https://images.t2online.in/cdn-cgi/image/width=1200,quality=70/https://cms.t2online.in/api/images/1783775033228.jpg` | Additional interior/property shot |
+| Hero | `https://images.unsplash.com/photo-1542314831-068cd1dbfeeb` | Dramatic dark luxury hotel facade at night with water reflection |
+| Story / Level 02 Blue | `https://images.unsplash.com/photo-1590490360182-c33d57733427` | Sapphire blue velvet luxury boutique hotel bedroom |
+| Story / Level 03-04 Green | `https://images.unsplash.com/photo-1618773928121-c32242e63f39` | Emerald green & oak acoustic timber modern boutique suite |
+| Story / Level 05 Red | `https://images.unsplash.com/photo-1590381105924-c72589b9ef3f` | Ruby red & dark walnut penthouse master residence |
+| Lounge Bar | `https://images.unsplash.com/photo-1514933651103-005eec06c04b` | Intimate cocktail lounge with warm amber & crimson bar |
+| Fine Dining | `https://images.unsplash.com/photo-1517248135467-4c7edcad34c4` | Ivory & gold fine dining room with ambient lighting |
+| Wine Nook | `https://images.unsplash.com/photo-1510812431401-41d2bd2722f3` | Moody wine bar nook & curated glassware |
+| Banquet Salon | `https://images.unsplash.com/photo-1519167758481-83f550bb49b3` | 2,000 sq ft grand luxury banquet hall with banquet tables |
+| Lobby & Sanctuary | `https://images.unsplash.com/photo-1566073771259-6a8506099945` | Sculptural boutique hotel lobby sanctuary |
 
-**Corrections to earlier sections of this PRD based on the same source:** the restaurant is called **NX Kitchen** (2,200 sq ft — a 30-seat lounge + 32-cover restaurant), not "Kitchen 165" as I'd initially assumed from an unrelated sister property's branding (NX Hotel, a different EM Bypass property under a similarly-named brand, uses "Kitchen 165" — don't conflate the two). NX Elit's Managing Director is Raju Saha. §6.4 and §10's "Dining — Kitchen 165" heading should read **"Dining — NX Kitchen."**
+**Branding note:** Rebranded to **The Elite Hotel** with **The Elite Kitchen & Lounge** and **Studio Arden** interior architecture.
 
 **Still not covered by real photography above, and worth chasing from the hotel directly:** exterior/facade wide shot, lobby/reception, each of the 4 room categories individually (Executive Deluxe / Deluxe / Super Deluxe / Suite), the terrace tandoor restaurant and ground-floor café (both described as upcoming, may not be shot yet), and any video footage for the hero loop.
 

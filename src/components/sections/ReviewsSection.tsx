@@ -25,7 +25,7 @@ const REVIEWS: GuestReview[] = [
     floorBadge: "Level 05 · Ruby Suite",
     stayDate: "Stayed Jan 2026",
     quote:
-      "The Vinoo Chadha interiors give NX Elit a distinct, moody elegance that sets it apart from generic business hotels. Quiet rooms, fast Wi-Fi, and 10 minutes to Sector V.",
+      "The Studio Arden interiors give The Elite Hotel a distinct, moody elegance that sets it apart from generic business hotels. Quiet rooms, fast Wi-Fi, and 10 minutes to Sector V.",
     verified: true,
   },
   {
@@ -34,10 +34,10 @@ const REVIEWS: GuestReview[] = [
     role: "Wedding Reception Hosts",
     rating: 5,
     category: "Banquet Hall Event · 140 Guests",
-    floorBadge: "Banquet Hall & NX Kitchen",
+    floorBadge: "Banquet Hall & The Elite Dining",
     stayDate: "Hosted Dec 2025",
     quote:
-      "We hosted our evening reception in the 2,000 sq ft banquet space. The in-house catering by Corporate Chef Naresh Kumar was outstanding and management handled every detail seamlessly.",
+      "We hosted our evening reception in the 2,000 sq ft banquet space. The in-house catering by Executive Chef Raghavendra Sen was outstanding and management handled every detail seamlessly.",
     verified: true,
   },
   {
@@ -49,7 +49,7 @@ const REVIEWS: GuestReview[] = [
     floorBadge: "Level 03 · Emerald Deluxe",
     stayDate: "Stayed Feb 2026",
     quote:
-      "NX Kitchen lounge is unmatched along the EM Bypass corridor. The artisanal cocktails and quiet atmosphere make it ideal for unwinding after hospital conferences.",
+      "The Elite lounge is unmatched along the EM Bypass corridor. The artisanal cocktails and quiet atmosphere make it ideal for unwinding after hospital conferences.",
     verified: true,
   },
   {
@@ -122,7 +122,7 @@ export default function ReviewsSection() {
             </div>
             <div className="space-y-0.5">
               <span className="font-space text-2xl font-bold text-white block tracking-tight">4.8 ★</span>
-              <span className="text-[10px] font-cinzel uppercase tracking-[0.16em] text-zinc-400 font-semibold">NX Kitchen</span>
+              <span className="text-[10px] font-cinzel uppercase tracking-[0.16em] text-zinc-400 font-semibold">Elite Dining</span>
             </div>
             <div className="space-y-0.5">
               <span className="font-space text-2xl font-bold text-white block tracking-tight">5.0 ★</span>

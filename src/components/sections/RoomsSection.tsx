@@ -22,7 +22,7 @@ export default function RoomsSection({ onOpenEnquiry }: RoomsSectionProps) {
           Residences & Signature Suites
         </h2>
         <p className="font-space text-sm sm:text-base text-zinc-300 font-light max-w-2xl leading-relaxed">
-          From tranquil sapphire and botanical emerald to the private ruby suites on the crown level. Double-insulated acoustic glazing, curated lighting, and custom furniture by Vinoo Chadha.
+          From tranquil sapphire and botanical emerald to the private ruby suites on the crown level. Double-insulated acoustic glazing, curated lighting, and custom furniture by Studio Arden.
         </p>
       </div>
 

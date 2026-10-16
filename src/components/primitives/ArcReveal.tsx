@@ -188,6 +188,11 @@ export function ArcReveal({ tint, heading, children, className = '' }: Props) {
     { scope: root }
   );
 
+  // Dynamically calculate font-size and spacing based on character count so headings never clip or bleed off
+  const charLength = heading.length;
+  const fontSize = charLength > 32 ? 34 : charLength > 24 ? 40 : 48;
+  const letterSpacing = charLength > 32 ? 2 : charLength > 24 ? 3 : 4;
+
   return (
     <div ref={root} className={`relative min-h-screen w-full overflow-hidden ${className}`}>
       {/* Section Content Behind: Strictly 100% hidden, only revealed after arc overlay */}
@@ -217,13 +222,13 @@ export function ArcReveal({ tint, heading, children, className = '' }: Props) {
             className="w-full max-w-[98vw] h-36 sm:h-48 lg:h-64 overflow-visible select-none"
           >
             <defs>
-              <path id={pathId} d="M 40 250 Q 700 25 1360 250" fill="none" />
+              <path id={pathId} d="M 30 255 Q 700 15 1370 255" fill="none" />
             </defs>
             <text
-              className="font-cinzel uppercase font-bold tracking-[0.2em]"
+              className="font-cinzel uppercase font-bold"
               fill="#ffffff"
-              fontSize="54"
-              letterSpacing="4"
+              fontSize={fontSize}
+              letterSpacing={letterSpacing}
               style={{
                 filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.98))',
               }}

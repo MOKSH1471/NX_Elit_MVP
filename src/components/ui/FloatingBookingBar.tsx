@@ -44,9 +44,9 @@ export default function FloatingBookingBar({ onOpenEnquiry }: FloatingBookingBar
       aria-hidden={!isVisible}
     >
       {/* 100% Solid Opaque Luxury Background - Prevents any text bleed-through */}
-      <div className="max-w-fit sm:max-w-3xl w-full bg-[#111116] border border-zinc-700/90 rounded-2xl sm:rounded-full p-2 sm:p-1.5 sm:px-3 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-2.5 shadow-[0_20px_50px_rgba(0,0,0,0.95)]">
+      <div className="w-full sm:w-auto max-w-[95vw] sm:max-w-none bg-[#111116] border border-zinc-700/90 rounded-2xl sm:rounded-full p-2.5 sm:py-2 sm:pl-6 sm:pr-4 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 shadow-[0_20px_50px_rgba(0,0,0,0.95)] backdrop-blur-md">
         {/* Direct Booking Guarantee Badge */}
-        <div className="hidden lg:flex items-center space-x-1.5 pl-2.5 pr-2.5 border-r border-zinc-800 text-zinc-400 font-medium shrink-0">
+        <div className="hidden lg:flex items-center space-x-1.5 pr-3 border-r border-zinc-800 text-zinc-400 font-medium shrink-0">
           <ShieldCheck className="w-3.5 h-3.5 text-[#d4af37]" />
           <span className="whitespace-nowrap font-cinzel text-[9px] tracking-[0.16em] uppercase text-zinc-300 font-medium">
             Direct Guarantee
@@ -54,7 +54,7 @@ export default function FloatingBookingBar({ onOpenEnquiry }: FloatingBookingBar
         </div>
 
         {/* Selector 1: Room Category */}
-        <div className="flex items-center space-x-2 w-full sm:w-auto px-2.5 py-1 rounded-lg sm:rounded-full bg-zinc-900/80 sm:bg-transparent border border-zinc-800/80 sm:border-0">
+        <div className="flex items-center space-x-2 w-full sm:w-auto px-2.5 py-1 rounded-lg sm:rounded-full bg-zinc-900/80 sm:bg-transparent border border-zinc-800/80 sm:border-0 shrink-0">
           <BedDouble className="w-3.5 h-3.5 text-[#d4af37] shrink-0" />
           <div className="flex flex-col text-left">
             <span className="font-cinzel text-[8px] uppercase tracking-[0.2em] text-[#d4af37]/90 font-semibold">
@@ -77,7 +77,7 @@ export default function FloatingBookingBar({ onOpenEnquiry }: FloatingBookingBar
         <div className="hidden sm:block h-6 w-[1px] bg-zinc-800 shrink-0" />
 
         {/* Selector 2: Guest Count */}
-        <div className="flex items-center space-x-2 w-full sm:w-auto px-2.5 py-1 rounded-lg sm:rounded-full bg-zinc-900/80 sm:bg-transparent border border-zinc-800/80 sm:border-0">
+        <div className="flex items-center space-x-2 w-full sm:w-auto px-2.5 py-1 rounded-lg sm:rounded-full bg-zinc-900/80 sm:bg-transparent border border-zinc-800/80 sm:border-0 shrink-0">
           <Users className="w-3.5 h-3.5 text-[#d4af37] shrink-0" />
           <div className="flex flex-col text-left">
             <span className="font-cinzel text-[8px] uppercase tracking-[0.2em] text-[#d4af37]/90 font-semibold">
@@ -100,7 +100,7 @@ export default function FloatingBookingBar({ onOpenEnquiry }: FloatingBookingBar
         {/* Selector 3: Date Range */}
         <div
           onClick={handleBook}
-          className="flex items-center space-x-2 w-full sm:w-auto px-2.5 py-1 rounded-lg sm:rounded-full bg-zinc-900/80 sm:bg-transparent border border-zinc-800/80 sm:border-0 cursor-pointer hover:bg-zinc-800/60 transition-colors"
+          className="flex items-center space-x-2 w-full sm:w-auto px-2.5 py-1 rounded-lg sm:rounded-full bg-zinc-900/80 sm:bg-transparent border border-zinc-800/80 sm:border-0 cursor-pointer hover:bg-zinc-800/60 transition-colors shrink-0"
         >
           <Calendar className="w-3.5 h-3.5 text-[#d4af37] shrink-0" />
           <div className="flex flex-col text-left">
@@ -114,10 +114,10 @@ export default function FloatingBookingBar({ onOpenEnquiry }: FloatingBookingBar
         </div>
 
         {/* Primary Action Button & Dismiss */}
-        <div className="flex items-center space-x-1.5 w-full sm:w-auto shrink-0">
+        <div className="flex items-center space-x-2 w-full sm:w-auto shrink-0 pl-1">
           <button
             onClick={handleBook}
-            className="flex-1 sm:flex-none px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-full bg-white text-black font-cinzel font-bold text-[10px] tracking-[0.12em] uppercase flex items-center justify-center space-x-1.5 hover:bg-zinc-200 transition-colors shadow-lg cursor-pointer whitespace-nowrap"
+            className="flex-1 sm:flex-none px-4 py-2 rounded-xl sm:rounded-full bg-white text-black font-cinzel font-bold text-[10px] tracking-[0.14em] uppercase flex items-center justify-center space-x-1.5 hover:bg-zinc-200 transition-colors shadow-lg cursor-pointer whitespace-nowrap"
           >
             <span>Check Rates</span>
             <ArrowRight className="w-3 h-3 text-black shrink-0" />
@@ -125,7 +125,7 @@ export default function FloatingBookingBar({ onOpenEnquiry }: FloatingBookingBar
 
           <button
             onClick={() => setDismissed(true)}
-            className="p-1 rounded-full text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors cursor-pointer shrink-0"
+            className="w-7 h-7 flex items-center justify-center rounded-full text-zinc-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer shrink-0"
             title="Dismiss quick booking bar"
             aria-label="Dismiss quick booking bar"
           >

@@ -18,7 +18,7 @@ const PANELS = [
     numeral: '02',
     name: 'Cobalt & Sapphire Blue',
     bg: '#0b1733',
-    desc: 'Deep sapphire velvet tones conceived by Vinoo Chadha to create an oasis of deep tranquility and acoustic contemplation away from EM Bypass traffic.',
+    desc: 'Deep sapphire velvet tones conceived by Studio Arden to create an oasis of deep tranquility and acoustic contemplation away from EM Bypass traffic.',
     quote: 'An acoustic sanctuary designed with calming oceanic blues and sleek metallic tones, ideal for deep focus.',
     specs: '6 Deluxe & Executive Residences',
     materials: ['Cobalt Velvet Upholstery', 'Bespoke Walnut Paneling', 'Warm Ambient Sconces', 'Brushed Brass Fixtures'],
@@ -44,7 +44,7 @@ const PANELS = [
     numeral: '05',
     name: 'Crimson & Ruby Red Crown',
     bg: '#2a0713',
-    desc: 'The crown jewel of NX Elit. Rich crimson tones, plush leather furniture, and executive suite indulgence with private skyline panoramas.',
+    desc: 'The crown jewel of The Elite Hotel. Rich crimson tones, plush leather furniture, and executive suite indulgence with private skyline panoramas.',
     quote: 'Flagship suite level with dramatic crimson depths and private city panoramas across the eastern Kolkata horizon.',
     specs: 'Presidential & Super Deluxe Suites',
     materials: ['Deep Ruby Silk Textures', 'Calacatta Marble Accents', 'Panoramic EM Bypass Skyline', 'Executive In-Room Bar'],
@@ -70,7 +70,7 @@ export default function StorySection({ onOpenEnquiry }: StorySectionProps) {
             Five Floors, <span className="italic font-light text-zinc-300">Three Moods.</span>
           </h2>
           <p className="font-space text-sm sm:text-base text-zinc-300 font-light leading-relaxed max-w-2xl">
-            Conceived by interior architect <span className="text-white font-medium">{HOTEL_INFO.interiorDesigner}</span>, NX Elit is an architectural study in contrast. As you journey up through the address, each level reveals a distinct chromatic sanctuary.
+            Conceived by interior architect <span className="text-white font-medium">{HOTEL_INFO.interiorDesigner}</span>, The Elite Hotel is an architectural study in contrast. As you journey up through the address, each level reveals a distinct chromatic sanctuary.
           </p>
         </div>
 
@@ -148,11 +148,11 @@ export default function StorySection({ onOpenEnquiry }: StorySectionProps) {
                 </div>
 
                 <div className="space-y-6">
-                  {/* Vinoo Chadha Quote */}
+                  {/* Designer Quote */}
                   <div className="p-5 rounded-2xl bg-black/40 border border-white/10 text-xs text-zinc-300 italic font-serif leading-relaxed">
                     &ldquo;{panel.quote}&rdquo;
                     <span className="block not-italic font-cinzel text-[10px] text-[#d4af37] tracking-[0.2em] uppercase font-semibold mt-3">
-                      Vinoo Chadha · Interior Architect
+                      {HOTEL_INFO.interiorDesigner} · Interior Architecture
                     </span>
                   </div>
 

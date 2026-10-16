@@ -90,7 +90,7 @@ export default function ErrorTemplate({
     eyebrow: `${statusCode} // UNEXPECTED OCCURRENCE`,
     title: "Corridor Irregularity",
     subtitle: "An unidentified state was encountered.",
-    description: "An atypical event disrupted your journey through NX Elit. Our concierge is available to assist.",
+    description: "An atypical event disrupted your journey through The Elite Hotel. Our concierge is available to assist.",
     glowColor: "rgba(212, 175, 55, 0.12)",
     badgeColor: "text-amber-400/90",
   };
@@ -207,7 +207,7 @@ export default function ErrorTemplate({
         <Footer onOpenEnquiry={() => {}} />
       ) : (
         <footer className="py-8 text-center text-xs font-mono text-zinc-600 border-t border-zinc-900">
-          <span>NX ELIT · BOUTIQUE 4-STAR LUXURY · EM BYPASS KOLKATA</span>
+          <span>THE ELITE HOTEL · BOUTIQUE 4-STAR LUXURY · EM BYPASS KOLKATA</span>
         </footer>
       )}
     </div>

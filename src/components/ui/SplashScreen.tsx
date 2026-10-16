@@ -23,9 +23,9 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
       }
     }
 
-    const hasSeenSplash = typeof window !== "undefined" && sessionStorage.getItem("nx_splash_seen");
-    const holdDuration = hasSeenSplash ? 200 : 800;
-    const totalDuration = hasSeenSplash ? 1100 : 2500;
+    const hasSeenSplash = typeof window !== "undefined" && sessionStorage.getItem("elite_splash_seen");
+    const holdDuration = hasSeenSplash ? 750 : 900;
+    const totalDuration = hasSeenSplash ? 2200 : 2500;
 
     // Lock scroll during intro
     const originalOverflow = document.body.style.overflow;
@@ -40,7 +40,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
     const completeTimer = setTimeout(() => {
       setIsDone(true);
       if (typeof window !== "undefined") {
-        sessionStorage.setItem("nx_splash_seen", "1");
+        sessionStorage.setItem("elite_splash_seen", "1");
       }
       document.body.style.overflow = originalOverflow;
       onComplete?.();
@@ -56,7 +56,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
   const handleSkip = () => {
     setIsDone(true);
     if (typeof window !== "undefined") {
-      sessionStorage.setItem("nx_splash_seen", "1");
+      sessionStorage.setItem("elite_splash_seen", "1");
     }
     document.body.style.overflow = "";
     onComplete?.();
@@ -93,7 +93,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
           >
             <img
               src={REAL_PHOTOS.heroExterior}
-              alt="NX Elit Boutique Hotel Kolkata"
+              alt="The Elite Boutique Hotel Kolkata"
               className="w-full h-full object-cover brightness-[0.45] contrast-[1.05]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-black/20 to-black/60" />
@@ -130,10 +130,10 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
                       fontWeight: 700,
                       letterSpacing: "0.24em",
                       textTransform: "uppercase",
-                      fontSize: "clamp(42px, 10vw, 155px)",
+                      fontSize: "clamp(36px, 9vw, 140px)",
                     }}
                   >
-                    NX ELIT
+                    THE ELITE
                   </text>
                 </mask>
               </defs>
@@ -147,6 +147,27 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
                 fill="#09090b"
                 mask="url(#splash-auto-knockout-mask)"
               />
+
+              {/* Golden border stroke outlining the text reveal */}
+              <text
+                x="50%"
+                y="50%"
+                textAnchor="middle"
+                dominantBaseline="central"
+                fill="none"
+                stroke="#d4af37"
+                strokeWidth="2"
+                style={{
+                  fontFamily: "var(--font-cinzel), 'Cinzel', serif",
+                  fontWeight: 700,
+                  letterSpacing: "0.24em",
+                  textTransform: "uppercase",
+                  fontSize: "clamp(36px, 9vw, 140px)",
+                  filter: "drop-shadow(0 0 16px rgba(212, 175, 55, 0.65))",
+                }}
+              >
+                THE ELITE
+              </text>
             </svg>
           </motion.div>
 

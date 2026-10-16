@@ -93,7 +93,7 @@ export const SOCIAL_LINKS: SocialLinkItem[] = [
   {
     id: "instagram",
     name: "Instagram",
-    href: "https://instagram.com/nxelitkolkata",
+    href: "https://instagram.com/theelitehotels",
     icon: InstagramIcon,
     hoverGlow: "hover:shadow-[0_0_16px_rgba(225,48,108,0.4)]",
     hoverColor: "hover:text-rose-400 hover:border-rose-500/40",
@@ -101,7 +101,7 @@ export const SOCIAL_LINKS: SocialLinkItem[] = [
   {
     id: "facebook",
     name: "Facebook",
-    href: "https://facebook.com/nxelitkolkata",
+    href: "https://facebook.com/theelitehotels",
     icon: FacebookIcon,
     hoverGlow: "hover:shadow-[0_0_16px_rgba(24,119,242,0.4)]",
     hoverColor: "hover:text-blue-400 hover:border-blue-500/40",
@@ -109,7 +109,7 @@ export const SOCIAL_LINKS: SocialLinkItem[] = [
   {
     id: "x",
     name: "X (Twitter)",
-    href: "https://x.com/nxelitkolkata",
+    href: "https://x.com/theelitehotels",
     icon: XIcon,
     hoverGlow: "hover:shadow-[0_0_16px_rgba(255,255,255,0.3)]",
     hoverColor: "hover:text-white hover:border-white/50",
@@ -117,7 +117,7 @@ export const SOCIAL_LINKS: SocialLinkItem[] = [
   {
     id: "linkedin",
     name: "LinkedIn",
-    href: "https://linkedin.com/company/nx-elit-hotel",
+    href: "https://linkedin.com/company/the-elite-hotel",
     icon: LinkedInIcon,
     hoverGlow: "hover:shadow-[0_0_16px_rgba(10,102,194,0.4)]",
     hoverColor: "hover:text-sky-400 hover:border-sky-500/40",
@@ -125,7 +125,7 @@ export const SOCIAL_LINKS: SocialLinkItem[] = [
   {
     id: "youtube",
     name: "YouTube",
-    href: "https://youtube.com/@nxelitkolkata",
+    href: "https://youtube.com/@theelitehotels",
     icon: YouTubeIcon,
     hoverGlow: "hover:shadow-[0_0_16px_rgba(255,0,0,0.4)]",
     hoverColor: "hover:text-red-400 hover:border-red-500/40",
@@ -168,8 +168,8 @@ export function SocialLinks({ className = "", size = "md" }: SocialLinksProps) {
             href={item.href}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Follow NX Elit on ${item.name}`}
-            title={`Follow NX Elit on ${item.name}`}
+            aria-label={`Follow The Elite on ${item.name}`}
+            title={`Follow The Elite on ${item.name}`}
             className={`${sizeClasses[size]} rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center text-zinc-400 ${item.hoverColor} ${item.hoverGlow} hover:bg-white/[0.08] hover:scale-110 active:scale-95 transition-all duration-300 shadow-sm cursor-pointer`}
           >
             <Icon className={iconSizes[size]} />

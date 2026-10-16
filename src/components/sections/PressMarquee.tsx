@@ -15,11 +15,11 @@ export default function PressMarquee() {
     </div>,
     <div key="m2" className="flex items-center space-x-3 text-xs text-zinc-300 font-light">
       <Sparkles className="w-4 h-4 text-white" />
-      <span>Vinoo Chadha Signature Interiors</span>
+      <span>Studio Arden Signature Interiors</span>
     </div>,
     <div key="m3" className="flex items-center space-x-3 text-xs text-zinc-300 font-light">
       <Utensils className="w-4 h-4 text-white" />
-      <span>NX Kitchen Lounge & Fine Dining</span>
+      <span>The Elite Lounge & Fine Dining</span>
     </div>,
     <div key="m4" className="flex items-center space-x-3 text-xs text-zinc-300 font-light">
       <Shield className="w-4 h-4 text-white" />

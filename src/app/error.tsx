@@ -11,7 +11,7 @@ interface ErrorProps {
 export default function ErrorPage({ error, reset }: ErrorProps) {
   useEffect(() => {
     // Log unexpected runtime errors for diagnostic tracking
-    console.error("NX Elit Runtime Exception:", error);
+    console.error("The Elite Hotel Runtime Exception:", error);
   }, [error]);
 
   return (

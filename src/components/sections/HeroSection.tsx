@@ -17,7 +17,7 @@ interface HeroSectionProps {
 const HERO_SLIDES = [
   { image: REAL_PHOTOS.heroExterior, label: 'Facade Skyline' },
   { image: REAL_PHOTOS.roomColorInterior1, label: 'Sapphire Residence' },
-  { image: REAL_PHOTOS.nxKitchenLounge, label: 'NX Kitchen Lounge' },
+  { image: REAL_PHOTOS.eliteKitchenLounge, label: 'The Elite Lounge' },
 ];
 
 export default function HeroSection({ onOpenEnquiry }: HeroSectionProps) {
@@ -66,7 +66,7 @@ export default function HeroSection({ onOpenEnquiry }: HeroSectionProps) {
           >
             <Image
               src={slide.image}
-              alt="NX Elit Boutique Hotel"
+              alt="The Elite Luxury Boutique Hotel"
               fill
               priority={index === 0}
               sizes="100vw"
@@ -88,13 +88,13 @@ export default function HeroSection({ onOpenEnquiry }: HeroSectionProps) {
 
         <h1
           className="font-serif font-bold tracking-[0.2em] text-white uppercase leading-none drop-shadow-2xl"
-          style={{ fontSize: 'clamp(3.5rem, 10vw, 7.5rem)' }}
+          style={{ fontSize: 'clamp(2.8rem, 8.5vw, 6.8rem)' }}
         >
-          NX ELIT
+          THE ELITE
         </h1>
 
         <p className="font-space text-sm sm:text-base font-light text-zinc-300 tracking-wide max-w-lg">
-          28 Designer Residences across chromatic colour floors. Interiors curated by Vinoo Chadha.
+          28 Designer Residences across chromatic colour floors. Interiors curated by Studio Arden.
         </p>
 
         <div className="pt-2">

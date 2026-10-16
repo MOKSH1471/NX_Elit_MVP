@@ -118,7 +118,7 @@ export default function AddressSection() {
 
                 <div className="pt-4 border-t border-zinc-800 space-y-2">
                   <span className="font-cinzel text-[10px] uppercase tracking-[0.2em] text-[#d4af37] block">
-                    Follow NX Elit
+                    Follow The Elite
                   </span>
                   <SocialLinks size="sm" />
                 </div>
@@ -135,7 +135,7 @@ export default function AddressSection() {
                       Enquiry Transmitted
                     </h4>
                     <p className="font-space text-sm text-zinc-300 max-w-md mx-auto font-light">
-                      Thank you, <span className="text-white font-semibold">{formData.name}</span>. Our desk team at NX Elit has received your details and will connect via phone/WhatsApp at <span className="text-white font-medium">{formData.phone}</span> shortly.
+                      Thank you, <span className="text-white font-semibold">{formData.name}</span>. Our desk team at The Elite Hotel has received your details and will connect via phone/WhatsApp at <span className="text-white font-medium">{formData.phone}</span> shortly.
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}

@@ -96,7 +96,7 @@ export default function EnquiryDrawer({
                   Enquiry Received
                 </h4>
                 <p className="text-sm text-zinc-300 leading-relaxed max-w-xs mx-auto font-light">
-                  Thank you, <span className="text-white font-semibold">{formData.name}</span>. Our desk team at NX Elit will contact you directly via phone/WhatsApp at{" "}
+                  Thank you, <span className="text-white font-semibold">{formData.name}</span>. Our desk team at The Elite Hotel will contact you directly via phone/WhatsApp at{" "}
                   <span className="text-white font-medium">{formData.phone}</span> within 30 minutes.
                 </p>
 

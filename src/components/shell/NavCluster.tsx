@@ -4,15 +4,31 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, MessageSquare } from 'lucide-react';
-import { useScrollJourney } from '@/lib/scroll/ScrollProvider';
-import { INK } from '@/lib/scroll/scenes';
 import { HOTEL_INFO } from '@/lib/data';
 
 export function NavCluster() {
-  const { scene } = useScrollJourney();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = React.useRef(0);
 
-  const currentColor = INK[scene.contrast];
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY <= 60) {
+        setIsVisible(true);
+      } else if (currentY > lastScrollY.current + 8) {
+        // Scrolling down -> hide navbar so cards are completely unobstructed
+        setIsVisible(false);
+      } else if (currentY < lastScrollY.current - 12) {
+        // Scrolling up -> reveal navbar
+        setIsVisible(true);
+      }
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleOpenEnquiry = (type: 'room' | 'banquet' = 'room') => {
     if (typeof window !== 'undefined') {
@@ -23,32 +39,38 @@ export function NavCluster() {
   return (
     <>
       <nav
-        className="fixed top-8 right-8 z-40 flex items-center gap-6 sm:gap-8 select-none"
-        style={{
-          color: currentColor,
-          transition: 'color 600ms cubic-bezier(.4,0,.2,1)',
-        }}
+        className={`fixed top-4 left-4 right-4 sm:left-8 sm:right-8 z-40 flex items-center justify-between px-6 py-3 rounded-full bg-[#09090b]/80 backdrop-blur-md border border-white/10 select-none text-[#f4f3ef] transition-all duration-300 shadow-2xl ${
+          isVisible ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0 pointer-events-none'
+        }`}
         aria-label="Main Navigation"
       >
+        {/* Left Brand Wordmark */}
+        <Link
+          href="/"
+          className="font-serif font-bold tracking-[0.2em] text-xs sm:text-sm uppercase text-white hover:text-[#d4af37] transition-colors"
+        >
+          THE ELITE
+        </Link>
+
         {/* Desktop Cluster: Exactly 3 items */}
         <div className="hidden lg:flex items-center gap-8">
           <button
             onClick={() => handleOpenEnquiry('room')}
-            className="font-serif italic font-bold text-sm tracking-tight underline underline-offset-4 cursor-pointer hover:opacity-80 transition-opacity focus-visible:ring-1 focus-visible:ring-current focus-visible:outline-none rounded-xs"
+            className="font-serif italic font-bold text-sm tracking-tight underline underline-offset-4 cursor-pointer hover:text-[#d4af37] transition-colors focus-visible:ring-1 focus-visible:ring-current focus-visible:outline-none rounded-xs"
           >
             RESERVE A RESIDENCE
           </button>
 
           <button
             onClick={() => handleOpenEnquiry('banquet')}
-            className="font-cinzel text-[10px] tracking-[0.24em] uppercase font-semibold cursor-pointer hover:opacity-80 transition-opacity focus-visible:ring-1 focus-visible:ring-current focus-visible:outline-none rounded-xs"
+            className="font-cinzel text-[10px] tracking-[0.24em] uppercase font-semibold cursor-pointer hover:text-[#d4af37] transition-colors focus-visible:ring-1 focus-visible:ring-current focus-visible:outline-none rounded-xs"
           >
             ENQUIRE
           </button>
 
           <Link
             href="/contact"
-            className="font-cinzel text-[10px] tracking-[0.24em] uppercase font-semibold hover:opacity-80 transition-opacity focus-visible:ring-1 focus-visible:ring-current focus-visible:outline-none rounded-xs"
+            className="font-cinzel text-[10px] tracking-[0.24em] uppercase font-semibold hover:text-[#d4af37] transition-colors focus-visible:ring-1 focus-visible:ring-current focus-visible:outline-none rounded-xs"
           >
             CONTACT
           </Link>
@@ -57,10 +79,10 @@ export function NavCluster() {
         {/* Mobile Hamburger Trigger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-1 cursor-pointer hover:opacity-80 transition-opacity"
+          className="lg:hidden p-1 cursor-pointer hover:text-[#d4af37] transition-colors"
           aria-label={mobileOpen ? 'Close Navigation' : 'Open Navigation'}
         >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </nav>
 
@@ -75,7 +97,7 @@ export function NavCluster() {
             className="fixed inset-0 z-50 bg-[#09090b] flex flex-col justify-between p-8 text-[#f4f3ef]"
           >
             <div className="flex items-center justify-between border-b border-zinc-800/80 pb-6">
-              <span className="font-serif font-bold tracking-[0.2em] text-lg">NX ELIT</span>
+              <span className="font-serif font-bold tracking-[0.2em] text-lg">THE ELITE</span>
               <button
                 onClick={() => setMobileOpen(false)}
                 className="p-2 text-zinc-400 hover:text-white"

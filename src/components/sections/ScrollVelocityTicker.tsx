@@ -7,7 +7,7 @@ export default function ScrollVelocityTicker() {
   return (
     <div className="w-full">
       <ScrollVelocity
-        text="EM BYPASS · KOLKATA · BOUTIQUE HOTEL · VINOO CHADHA INTERIORS · 28 ROOMS · NX KITCHEN LOUNGE · "
+        text="EM BYPASS · KOLKATA · BOUTIQUE LUXURY HOTEL · STUDIO ARDEN INTERIORS · 28 RESIDENCES · THE ELITE LOUNGE · "
         baseVelocity={1.5}
       />
     </div>

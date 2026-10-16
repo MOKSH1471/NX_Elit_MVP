@@ -3,7 +3,7 @@ import ErrorTemplate from "@/components/ui/ErrorTemplate";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "404 - Sanctuary Not Found | NX Elit",
+  title: "404 - Sanctuary Not Found | The Elite Hotel",
   description: "The page or sanctuary you are seeking does not reside at this address.",
 };
 

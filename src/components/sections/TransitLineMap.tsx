@@ -59,8 +59,8 @@ const TRANSIT_STOPS: TransitStop[] = [
     mapsUrl: 'https://maps.google.com/?q=Science+City+Kolkata',
   },
   {
-    id: 'nx-elit',
-    name: 'NX ELIT',
+    id: 'elite-hotel',
+    name: 'THE ELITE',
     subname: 'EM Bypass Sanctuary',
     time: '0 MIN',
     distance: 'Focal Point',
@@ -128,7 +128,7 @@ const PATH_DATA =
   'C 1125 133, 1150 138, 1175 142';
 
 export default function TransitLineMap() {
-  const [activeStopId, setActiveStopId] = useState<string>('nx-elit');
+  const [activeStopId, setActiveStopId] = useState<string>('elite-hotel');
 
   const activeStop =
     TRANSIT_STOPS.find((s) => s.id === activeStopId) || TRANSIT_STOPS[3];
@@ -160,7 +160,7 @@ export default function TransitLineMap() {
 
         <div className="flex items-center gap-2 text-[11px] font-space text-zinc-400 bg-white/[0.03] px-3.5 py-1.5 rounded-full border border-white/5">
           <span className="w-2 h-2 rounded-full bg-[#d4af37] animate-pulse" />
-          <span>Focal Sanctuary: <strong className="text-white font-medium">NX Elit</strong></span>
+          <span>Focal Sanctuary: <strong className="text-white font-medium">The Elite Hotel</strong></span>
         </div>
       </div>
 
@@ -170,7 +170,7 @@ export default function TransitLineMap() {
           <svg
             viewBox="0 0 1200 270"
             className="w-full h-auto overflow-visible select-none"
-            aria-label="NX Elit Transit Line Topology Diagram"
+            aria-label="The Elite Transit Line Topology Diagram"
           >
             <defs>
               {/* Gradient for the flowing line */}
@@ -211,11 +211,11 @@ export default function TransitLineMap() {
               strokeLinejoin="round"
             />
 
-            {/* Center NX Elit Luxury Emblem (Matching Reference Image) */}
+            {/* Center The Elite Luxury Emblem */}
             <g
               transform="translate(600, 92)"
               className="cursor-pointer transition-transform duration-300 hover:scale-110"
-              onClick={() => setActiveStopId('nx-elit')}
+              onClick={() => setActiveStopId('elite-hotel')}
             >
               {/* Four-Petal Luxury Crest */}
               <path
