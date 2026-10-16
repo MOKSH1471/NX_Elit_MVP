@@ -129,16 +129,23 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
             <span className="hidden sm:inline text-zinc-700">·</span>
             <div className="flex items-center gap-2">
               <span className="text-zinc-400">Built by</span>
-              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-lg bg-[#14171a] border border-zinc-700/60 shadow-sm hover:border-zinc-500 transition-colors">
+              <a
+                href="https://www.galileoandduke.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 px-2.5 py-1 rounded-lg bg-[#14171a] border border-zinc-700/60 shadow-sm hover:border-zinc-400 hover:bg-[#1a1e23] transition-all cursor-pointer"
+                aria-label="Visit Galileo & Duke"
+              >
                 <img
                   src="/brand/galileo-and-duke.jpg"
                   alt="Galileo & Duke"
-                  className="w-5 h-5 rounded object-cover"
+                  className="w-5 h-5 rounded object-cover group-hover:scale-105 transition-transform"
                 />
-                <span className="font-sans font-bold text-xs tracking-tight text-white leading-none">
+                <span className="font-sans font-bold text-xs tracking-tight text-white leading-none group-hover:text-zinc-100 transition-colors">
                   Galileo <span className="text-zinc-400 font-semibold">&amp;</span> Duke
                 </span>
-              </div>
+                <ArrowUpRight className="w-3 h-3 text-zinc-500 group-hover:text-[#d4af37] transition-colors" />
+              </a>
             </div>
           </div>
           <div className="flex items-center space-x-6 text-[11px]">
